@@ -44,12 +44,28 @@ export function Navbar() {
             }`}>
               Home
             </Link>
-            <Link href="/pricing" className={`transition font-medium ${
-              isActive("/pricing")
+
+            <Link href="/products" className={`transition font-medium ${
+              isActive("/products")
                 ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
                 : "text-slate-300 hover:text-emerald-400"
             }`}>
               Products
+            </Link>
+
+            <Link href="/digital-solutions" className={`transition font-medium ${
+              isActive("/digital-solutions")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Digital Solutions
+            </Link>
+            <Link href="/resourcing" className={`transition font-medium ${
+              isActive("/resourcing")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Resourcing
             </Link>
             <Link href="/contact" className={`transition font-medium ${
               isActive("/contact")
@@ -112,16 +128,40 @@ export function Navbar() {
             >
               Home
             </Link>
+
             <Link
-              href="/pricing"
+              href="/products"
               className={`block px-4 py-2 rounded-lg transition ${
-                isActive("/pricing")
+                isActive("/products")
                   ? "bg-slate-700 text-emerald-400 font-semibold"
                   : "text-slate-300 hover:bg-slate-700"
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Products
+            </Link>
+
+            <Link
+              href="/digital-solutions"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/digital-solutions")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Digital Solutions
+            </Link>
+            <Link
+              href="/resourcing"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/resourcing")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Resourcing
             </Link>
             <Link
               href="/contact"

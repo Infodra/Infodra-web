@@ -1,3 +1,5 @@
+"use client";
+
 interface FeatureGridProps {
   features: string[];
   columns?: 2 | 3 | 4;
