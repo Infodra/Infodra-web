@@ -1,10 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const uri = process.env.MONGODB_URI;
-
-if (!uri) {
-  throw new Error("MONGODB_URI environment variable is not defined");
-}
+const uri = process.env.MONGODB_URI || "";
 
 interface MongoGlobal {
   conn: MongoClient | null;
@@ -23,6 +19,12 @@ if (!global.mongo) {
 }
 
 export async function connectToDatabase() {
+  if (!uri) {
+    throw new Error(
+      "MONGODB_URI environment variable is not defined. Please set it in your environment variables."
+    );
+  }
+
   if (cached.conn) {
     return cached.conn;
   }
@@ -36,7 +38,7 @@ export async function connectToDatabase() {
       },
     };
 
-    cached.promise = MongoClient.connect(uri!, opts);
+    cached.promise = MongoClient.connect(uri, opts);
   }
 
   try {
