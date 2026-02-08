@@ -24,13 +24,13 @@ export default function Products() {
       <Hero
         title="AI Solutions That Transform Your Business"
         description="Leverage cutting-edge artificial intelligence to automate workflows, break language barriers, and unlock new growth opportunities."
-        primaryCTA={{ text: "Explore Products", href: "/products" }}
+        primaryCTA={{ text: "Explore Products", href: "#products" }}
         secondaryCTA={{ text: "Schedule Demo", href: "/contact" }}
       />
 
-      <section className="py-16 bg-white">
+      <section id="products" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
             Our Products
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -62,13 +62,13 @@ export default function Products() {
       <CTASection
         title="Ready to Transform Your Business?"
         description="Join hundreds of companies using Infodra AI Solutions to automate workflows and boost productivity."
-        primaryCTA={{ text: "Get Started Free", href: "/contact" }}
-        secondaryCTA={{ text: "View Pricing", href: "/pricing" }}
+        primaryCTA={{ text: "Get started", href: "/contact" }}
+        secondaryCTA={{ text: "Chat on WhatsApp", href: "https://wa.me/918148146785" }}
       />
 
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">
             Why Choose Infodra AI?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

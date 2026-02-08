@@ -27,6 +27,7 @@ interface FAQ {
 interface CTA {
   text: string;
   url?: string;
+  subtext?: string;
 }
 
 interface ServiceMode {
@@ -515,7 +516,7 @@ export const products: Product[] = [
     icon: "💼",
     features: [
       {
-        title: "50+ Million Business Records",
+        title: "5+ Million Business Records",
         description:
           "Access verified data on Indian companies, businesses, and decision makers across all sectors and regions",
       },
@@ -572,9 +573,9 @@ export const products: Product[] = [
           "Identify export-import companies, trading houses, and logistics partners for B2B service providers",
       },
       {
-        title: "Government Tenders",
+        title: "Vendor & Supplier Discovery",
         description:
-          "Find registered government contractors and eligible suppliers for tender bidding opportunities",
+          "Identify reliable vendors, suppliers, and service providers across industries to streamline procurement, sourcing, and operational planning",
       },
     ],
     howItWorks: [
@@ -620,7 +621,7 @@ export const products: Product[] = [
       {
         question: "Can I use this data for cold calling or emails?",
         answer:
-          "Yes, all leads are verified for compliance with Indian telemarketing and email regulations. You receive TCPA/DND compliant data.",
+          "Yes, all leads are verified for compliance with Indian telemarketing and email regulations.",
       },
       {
         question: "What industries are covered?",
@@ -639,12 +640,13 @@ export const products: Product[] = [
       },
     ],
     primaryCTA: {
-      text: "Pricing",
-      url: "#",
+      text: "Start Subscription",
+      url: "https://app.infodratechnologies.com/bizlead",
+      subtext: "Choose your plan, complete payment securely, and get instant access to BizLead dashboard.",
     },
     secondaryCTA: {
-      text: "WhatsApp",
-      url: "https://wa.me/918148146785",
+      text: "Request Demo",
+      url: "/contact",
     },
   },
   {
@@ -781,7 +783,7 @@ export const products: Product[] = [
       {
         question: "How long does document translation take?",
         answer:
-          "Standard translation takes 30 minutes to 2 hours depending on document length. Enterprise customers get priority processing with 24-hour turnaround for urgent requests.",
+          "Standard translation takes 5 minutes to 2 hours depending on document length. Enterprise customers get priority processing with 24-hour turnaround for urgent requests.",
       },
       {
         question: "Is my document data secure and confidential?",

@@ -1,16 +1,26 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Hero } from "@/components/Hero";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 
-const products = [
-  { value: "", label: "Select a product..." },
-  { value: "ai-video-translator", label: "AI Video Translator" },
-  { value: "ai-user-manual-generation", label: "AI User Manual Generation" },
-  { value: "ai-document-translator", label: "AI Document Translator" },
-  { value: "bizlead-database", label: "BiZlead Database" },
-  { value: "all", label: "All Products / General Inquiry" },
+const productsAndSolutions = [
+  { value: "", label: "Select a product or solution..." },
+  { category: "Products", items: [
+    { value: "ai-video-translator", label: "AI Video Translator" },
+    { value: "ai-user-manual-generation", label: "AI User Manual Generation" },
+    { value: "ai-document-translator", label: "AI Document Translator" },
+    { value: "bizlead-database", label: "BiZlead Database" },
+    { value: "all-products", label: "All Products / General Inquiry" },
+  ]},
+  { category: "Digital Solutions", items: [
+    { value: "web-development", label: "Professional Website Development" },
+    { value: "seo-services", label: "SEO & Google Ranking Services" },
+    { value: "web-applications", label: "Custom Web Applications" },
+    { value: "business-automation", label: "Business Process Automation" },
+    { value: "cloud-migration", label: "Cloud Migration & Infrastructure Services" },
+    { value: "support-maintenance", label: "Ongoing Support & Maintenance Services" },
+    { value: "all-solutions", label: "All Digital Solutions / General Inquiry" },
+  ]},
 ];
 
 export default function ContactPage() {
@@ -19,13 +29,20 @@ export default function ContactPage() {
     email: "",
     phone: "",
     company: "",
-    product: "",
+    productOrSolution: "",
     message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
+
+  // Email validation function
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -34,41 +51,52 @@ export default function ContactPage() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Real-time email validation
+    if (name === "email") {
+      if (value && !validateEmail(value)) {
+        setEmailError("Please enter a valid email address (e.g., user@example.com)");
+      } else {
+        setEmailError("");
+      }
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validate required fields
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       alert("Please fill in all required fields");
+      return;
+    }
+
+    // Validate email format
+    if (!validateEmail(formData.email)) {
+      setEmailError("Please enter a valid email address (e.g., user@example.com)");
+      alert("Please enter a valid email address");
       return;
     }
 
     setIsLoading(true);
 
     try {
-      // Using Formspree endpoint - replace with your actual Formspree form ID
-      // Get your form ID from https://formspree.io/
-      const FORMSPREE_ID = "YOUR_FORMSPREE_ID"; // User will replace this
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          productOrSolution: formData.productOrSolution,
+          message: formData.message,
+        }),
+      });
 
-      const response = await fetch(
-        `https://formspree.io/f/${FORMSPREE_ID}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            company: formData.company,
-            product: formData.product || "Not specified",
-            message: formData.message,
-          }),
-        }
-      );
+      const data = await response.json();
 
       if (response.ok) {
         setSubmitted(true);
@@ -77,7 +105,7 @@ export default function ContactPage() {
           email: "",
           phone: "",
           company: "",
-          product: "",
+          productOrSolution: "",
           message: "",
         });
 
@@ -86,7 +114,7 @@ export default function ContactPage() {
           setSubmitted(false);
         }, 5000);
       } else {
-        alert("Error sending message. Please try again.");
+        alert(data.error || "Error sending message. Please try again.");
       }
     } catch (error) {
       console.error("Form submission error:", error);
@@ -100,31 +128,40 @@ export default function ContactPage() {
 
   return (
     <main>
-      <Hero
-        title="Get In Touch"
-        description="Have questions? Our team is ready to help you find the perfect AI solution for your business."
-        primaryCTA={{ text: "Send Message", href: "#contact-form" }}
-      />
+      {/* Contact Page Hero Section */}
+      <section className="relative min-h-[600px] flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white overflow-hidden">
+        {/* Decorative gradient elements */}
+        <div className="absolute top-20 left-10 w-80 h-80 bg-emerald-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-pulse" />
+        <div className="absolute -bottom-20 right-20 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-pulse" />
+        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-emerald-600 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center z-10">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-white">
+            Get In Touch
+          </h1>
+          <p className="text-lg md:text-xl mb-10 text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            Have questions? Our team is ready to help you find the perfect AI solution for your business.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#contact-form"
+              className="bg-green-600 text-white px-8 py-3.5 rounded-lg font-semibold text-lg tracking-normal hover:bg-green-700 hover:shadow-2xl active:shadow-lg transition duration-200 shadow-lg"
+            >
+              Send Message
+            </a>
+          </div>
+        </div>
+      </section>
 
       <section id="contact-form" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              <h2 className="text-4xl font-bold mb-8 text-gray-900">
                 Contact Information
               </h2>
               <div className="space-y-8">
-                {/* Company */}
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
-                    Company
-                  </h3>
-                  <p className="text-gray-900 font-semibold">
-                    INFODRA TECHNOLOGIES PVT LTD
-                  </p>
-                </div>
-
                 {/* Address */}
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
@@ -149,10 +186,10 @@ export default function ContactPage() {
                     Phone
                   </h3>
                   <a
-                    href="tel:+919884053540"
+                    href="tel:+918148146785"
                     className="text-blue-600 hover:text-blue-700 font-semibold"
                   >
-                    +91 98840 53540
+                    +91 81481 46785
                   </a>
                 </div>
 
@@ -192,8 +229,7 @@ export default function ContactPage() {
                     <p>9:00 AM - 6:00 PM IST</p>
                     <p className="font-medium mt-2">Saturday</p>
                     <p>10:00 AM - 4:00 PM IST</p>
-                    <p className="font-medium mt-2 text-red-600">Sunday</p>
-                    <p className="text-red-600">Closed</p>
+                    <p className="font-medium mt-2"><span className="text-red-600">Sunday - </span><span className="text-red-600">Closed</span></p>
                   </div>
                 </div>
 
@@ -222,28 +258,6 @@ export default function ContactPage() {
                 Fill out the form below and our team will get back to you within
                 24 hours.
               </p>
-
-              {submitted && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg flex items-start">
-                  <svg
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <div>
-                    <h3 className="font-semibold">Message sent successfully!</h3>
-                    <p className="text-sm">
-                      Thank you for reaching out. We'll contact you soon.
-                    </p>
-                  </div>
-                </div>
-              )}
 
               <form
                 ref={formRef}
@@ -286,8 +300,20 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     placeholder="your.email@company.com"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition ${
+                      emailError
+                        ? "border-red-500 focus:ring-red-500 bg-red-50"
+                        : "border-gray-300 focus:ring-blue-500"
+                    }`}
                   />
+                  {emailError && (
+                    <p className="text-red-600 text-sm mt-1 flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18.101 12.93a1 1 0 00-1.414-1.414L10 15.586 7.707 13.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l8-8z" />
+                      </svg>
+                      {emailError}
+                    </p>
+                  )}
                 </div>
 
                 {/* Phone */}
@@ -309,45 +335,38 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Company */}
+                {/* Products / Digital Solutions */}
                 <div>
                   <label
-                    htmlFor="company"
+                    htmlFor="productOrSolution"
                     className="block text-gray-700 font-semibold mb-2"
                   >
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    placeholder="Your company name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-                  />
-                </div>
-
-                {/* Product Interested */}
-                <div>
-                  <label
-                    htmlFor="product"
-                    className="block text-gray-700 font-semibold mb-2"
-                  >
-                    Product Interested
+                    Products / Digital Solutions
                   </label>
                   <select
-                    id="product"
-                    name="product"
-                    value={formData.product}
+                    id="productOrSolution"
+                    name="productOrSolution"
+                    value={formData.productOrSolution}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white"
                   >
-                    {products.map((prod) => (
-                      <option key={prod.value} value={prod.value}>
-                        {prod.label}
-                      </option>
-                    ))}
+                    <option value="">Select a product or solution...</option>
+                    <optgroup label="Products">
+                      <option value="ai-video-translator">AI Video Translator</option>
+                      <option value="ai-user-manual-generation">AI User Manual Generation</option>
+                      <option value="ai-document-translator">AI Document Translator</option>
+                      <option value="bizlead-database">BiZlead Database</option>
+                      <option value="all-products">All Products / General Inquiry</option>
+                    </optgroup>
+                    <optgroup label="Digital Solutions">
+                      <option value="web-development">Professional Website Development</option>
+                      <option value="seo-services">SEO & Google Ranking Services</option>
+                      <option value="web-applications">Custom Web Applications</option>
+                      <option value="business-automation">Business Process Automation</option>
+                      <option value="cloud-migration">Cloud Migration & Infrastructure Services</option>
+                      <option value="support-maintenance">Ongoing Support & Maintenance Services</option>
+                      <option value="all-solutions">All Digital Solutions / General Inquiry</option>
+                    </optgroup>
                   </select>
                 </div>
 
@@ -374,8 +393,8 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  disabled={isLoading}
-                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition font-semibold flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isLoading || !!emailError}
+                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition font-semibold text-lg tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
                     <>
@@ -424,6 +443,34 @@ export default function ContactPage() {
                   <span className="text-red-500">*</span> Required fields
                 </p>
               </form>
+
+              {submitted && (
+                <div className="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg flex items-start">
+                  <svg
+                    className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <div>
+                    <h3 className="font-semibold text-lg">🎉 Message Received Successfully!</h3>
+                    <p className="text-sm mt-1">
+                      Thank you, <strong>{formData.name}</strong>! We've received your message and saved it to our system.
+                    </p>
+                    <p className="text-sm mt-2">
+                      Our team will review your inquiry and get back to you at <strong>{formData.email}</strong> within <strong>24 hours</strong>.
+                    </p>
+                    <p className="text-sm mt-2 font-semibold text-green-800">
+                      We appreciate your interest in working with us! 
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

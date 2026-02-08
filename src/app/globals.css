@@ -11,6 +11,24 @@
   }
 }
 
+@keyframes slow-pulse {
+  0%, 30%, 100% {
+    opacity: 0.5;
+  }
+  65% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes subtle-pulse {
+  0%, 30%, 100% {
+    opacity: 0.4;
+  }
+  65% {
+    opacity: 0.1;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -33,6 +51,14 @@
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
   opacity: 0;
+}
+
+.animate-slow-pulse {
+  animation: slow-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 body {

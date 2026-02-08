@@ -130,10 +130,11 @@ export default async function ProductPage({
         primaryCTA={{
           text: product.primaryCTA.text,
           href: product.primaryCTA.url || "#",
+          subtext: product.primaryCTA.subtext,
         }}
         secondaryCTA={{
-          text: "Chat on WhatsApp",
-          href: "https://wa.me/918148146785",
+          text: product.secondaryCTA.text,
+          href: product.secondaryCTA.url || "#",
         }}
       />
     </main>

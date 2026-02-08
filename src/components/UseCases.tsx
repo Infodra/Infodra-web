@@ -12,7 +12,7 @@ export function UseCases({ useCases }: UseCasesProps) {
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">
             Perfect For
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ export function UseCases({ useCases }: UseCasesProps) {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
                     {useCase.title}
                   </h3>
                   <p className="text-gray-700 leading-relaxed">

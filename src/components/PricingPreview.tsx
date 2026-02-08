@@ -15,7 +15,7 @@ export function PricingPreview({ pricing }: PricingPreviewProps) {
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">
             Flexible Pricing Plans
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -89,7 +89,7 @@ export function PricingPreview({ pricing }: PricingPreviewProps) {
 
                 {/* CTA Button */}
                 <button
-                  className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 mt-6 ${
+                  className={`w-full py-3 rounded-lg font-semibold text-lg tracking-wider transition-all duration-200 mt-6 ${
                     index === 1
                       ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:shadow-lg active:shadow-md"
                       : "bg-gradient-to-r from-gray-100 to-gray-200 text-gray-900 hover:from-gray-200 hover:to-gray-300 hover:shadow-md active:shadow-sm"

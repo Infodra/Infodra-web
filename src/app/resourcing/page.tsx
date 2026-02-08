@@ -131,10 +131,10 @@ export default function ResourcingServices() {
     <main className="min-h-screen bg-white">
       {/* 1️⃣ HERO SECTION */}
       <section className="relative bg-gradient-to-br from-blue-50 via-white to-gray-50 pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-        </div>
+        {/* Decorative gradient elements with animations */}
+        <div className="absolute top-40 right-32 w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-subtle-pulse" />
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-violet-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-subtle-pulse" />
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -151,20 +151,17 @@ export default function ResourcingServices() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link
                   href="#services"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold text-base tracking-wider rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
                 >
-                  Request Resources
+                  Explore
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
-                <a
-                  href="https://wa.me/918148146785"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold text-base tracking-wider rounded-lg hover:bg-blue-50 transition-colors duration-200"
                 >
-                  <MessageCircle className="mr-2 w-5 h-5" />
-                  Chat on WhatsApp
-                </a>
+                  Get in Touch
+                </Link>
               </div>
             </div>
 
@@ -172,7 +169,7 @@ export default function ResourcingServices() {
             <div className="relative h-96 md:h-full flex items-center justify-center">
               <div className="relative w-full h-96 bg-gradient-to-br from-blue-200 to-blue-100 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&q=80"
                   alt="Engineering and IT Professionals - Skilled Technical Talent"
                   fill
                   className="object-cover"
@@ -205,7 +202,7 @@ export default function ResourcingServices() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Resourcing Services
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -215,22 +212,45 @@ export default function ResourcingServices() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group bg-white p-8 rounded-2xl border border-gray-200 hover:border-blue-400 transition-all duration-300 shadow-sm hover:shadow-xl"
-              >
-                <div className="mb-4 p-4 w-fit bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+            {/* Card 1 - Blue */}
+            <div className="p-8 bg-white border-0 border-l-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Engineering Resource Deployment
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Deployment of experienced mechanical, design, and technical engineers to support complex project execution and enterprise-scale engineering initiatives.
+              </p>
+            </div>
+
+            {/* Card 2 - Green */}
+            <div className="p-8 bg-white border-0 border-l-4 border-green-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                IT & Software Professionals
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Provision of skilled developers, analysts, and IT specialists across modern technology stacks to accelerate digital transformation programs.
+              </p>
+            </div>
+
+            {/* Card 3 - Amber */}
+            <div className="p-8 bg-white border-0 border-l-4 border-amber-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Contract & Temporary Staffing
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Flexible engagement models designed to support short-term, long-term, and project-based resource requirements with scalable workforce solutions.
+              </p>
+            </div>
+
+            {/* Card 4 - Indigo */}
+            <div className="p-8 bg-white border-0 border-l-4 border-indigo-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Dedicated Resource Teams
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Structured technical teams aligned to your project objectives, delivering coordinated execution and end-to-end support for complex programs.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -239,28 +259,64 @@ export default function ResourcingServices() {
       <section className="py-20 md:py-32 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Industries We Support
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience across multiple sectors with industry-specific expertise
+              Delivering structured engineering and digital solutions across diverse industry ecosystems.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {industriesSupported.map((industry, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-blue-50 to-gray-50 p-8 rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg text-center"
-              >
-                <div className="flex justify-center mb-4 text-blue-600">
-                  {industry.icon}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900">
-                  {industry.name}
-                </h3>
+            {/* Automotive */}
+            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="flex justify-center mb-4 text-blue-600">
+                <TrendingUp className="w-8 h-8" />
               </div>
-            ))}
+              <h3 className="text-lg font-semibold text-gray-900">
+                Automotive
+              </h3>
+            </div>
+
+            {/* Manufacturing */}
+            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="flex justify-center mb-4 text-blue-600">
+                <Building2 className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Manufacturing
+              </h3>
+            </div>
+
+            {/* Information Technology */}
+            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="flex justify-center mb-4 text-blue-600">
+                <Code2 className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Information<br />Technology
+              </h3>
+            </div>
+
+            {/* Engineering Services */}
+            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="flex justify-center mb-4 text-blue-600">
+                <Wrench className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Engineering<br />Services
+              </h3>
+            </div>
+
+            {/* Industrial Projects */}
+            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="flex justify-center mb-4 text-blue-600">
+                <Briefcase className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Industrial<br />Projects
+              </h3>
+            </div>
           </div>
         </div>
       </section>
@@ -269,7 +325,7 @@ export default function ResourcingServices() {
       <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Why Choose Infodra for Resourcing
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -301,7 +357,7 @@ export default function ResourcingServices() {
       <section className="py-20 md:py-32 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               How We Work
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -355,7 +411,7 @@ export default function ResourcingServices() {
       <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Types of Resources We Provide
             </h2>
           </div>
@@ -440,12 +496,12 @@ export default function ResourcingServices() {
       </section>
 
       {/* 6️⃣ FINAL CTA SECTION */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-blue-600 to-blue-700 text-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-gradient-to-br from-slate-900 via-emerald-900 to-cyan-900 text-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Looking for Skilled Technical Resources?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-emerald-100 mb-8 leading-relaxed max-w-2xl mx-auto">
             Whether you need short-term contract staff, dedicated teams, or
             individual specialists, we have the talent and expertise to support
             your projects and business objectives.
@@ -456,14 +512,14 @@ export default function ResourcingServices() {
               href="https://wa.me/918148146785"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+              className="inline-flex items-center justify-center px-10 py-4 bg-white text-emerald-600 font-bold text-xl tracking-wider rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
             >
               <MessageCircle className="mr-3 w-6 h-6" />
-              Chat on WhatsApp: 81481 46785
+              WhatsApp
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"
+              className="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-bold text-xl tracking-wider rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"
             >
               Send a Proposal Request
               <ArrowRight className="ml-3 w-6 h-6" />
@@ -480,7 +536,7 @@ export default function ResourcingServices() {
       <section className="py-20 md:py-32 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
           </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,18 +27,24 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="https://www.infodratechnologies.com/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-md">
-              <span className="text-white font-bold text-sm">AI</span>
-            </div>
-            <span className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+          <a href="https://www.infodratechnologies.com/" className="flex items-center gap-3 flex-shrink-0">
+            <Image 
+              src="/infodra-logo.png" 
+              alt="Infodra Technologies Logo" 
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain"
+              priority
+              unoptimized
+            />
+            <span className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent tracking-wide">
               Infodra Technologies
             </span>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className={`transition font-medium ${
+            <Link href="/" className={`transition font-medium text-base ${
               isActive("/")
                 ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
                 : "text-slate-300 hover:text-emerald-400"
@@ -45,7 +52,7 @@ export function Navbar() {
               Home
             </Link>
 
-            <Link href="/products" className={`transition font-medium ${
+            <Link href="/products" className={`transition font-medium text-base ${
               isActive("/products")
                 ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
                 : "text-slate-300 hover:text-emerald-400"
@@ -53,21 +60,39 @@ export function Navbar() {
               Products
             </Link>
 
-            <Link href="/digital-solutions" className={`transition font-medium ${
+            <Link href="/digital-solutions" className={`transition font-medium text-base ${
               isActive("/digital-solutions")
                 ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
                 : "text-slate-300 hover:text-emerald-400"
             }`}>
               Digital Solutions
             </Link>
-            <Link href="/resourcing" className={`transition font-medium ${
+
+            <Link href="/resourcing" className={`transition font-medium text-base ${
               isActive("/resourcing")
                 ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
                 : "text-slate-300 hover:text-emerald-400"
             }`}>
               Resourcing
             </Link>
-            <Link href="/contact" className={`transition font-medium ${
+
+            <Link href="/careers" className={`transition font-medium text-base ${
+              isActive("/careers")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Careers
+            </Link>
+
+            <Link href="/about" className={`transition font-medium text-base ${
+              isActive("/about")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              About Us
+            </Link>
+
+            <Link href="/contact" className={`transition font-medium text-base ${
               isActive("/contact")
                 ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
                 : "text-slate-300 hover:text-emerald-400"
@@ -79,7 +104,7 @@ export function Navbar() {
           {/* Desktop CTA Button */}
           <Link
             href="/contact"
-            className="hidden md:inline-block bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-semibold"
+            className="hidden md:inline-block bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-semibold text-lg tracking-wider"
           >
             Get Started
           </Link>
@@ -152,6 +177,7 @@ export function Navbar() {
             >
               Digital Solutions
             </Link>
+
             <Link
               href="/resourcing"
               className={`block px-4 py-2 rounded-lg transition ${
@@ -163,6 +189,31 @@ export function Navbar() {
             >
               Resourcing
             </Link>
+
+            <Link
+              href="/careers"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/careers")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Careers
+            </Link>
+
+            <Link
+              href="/about"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/about")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
+
             <Link
               href="/contact"
               className={`block px-4 py-2 rounded-lg transition ${
@@ -176,7 +227,7 @@ export function Navbar() {
             </Link>
             <Link
               href="/contact"
-              className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition font-semibold text-center mt-2"
+              className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition font-semibold text-lg tracking-wider text-center mt-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Get Started
