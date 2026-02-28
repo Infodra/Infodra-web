@@ -12,7 +12,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:col-span-1">
             <Image 
-              src="/infodra-footer-logo.png" 
+              src="/technologies-logo.png" 
               alt="Infodra Technologies Logo" 
               width={200}
               height={60}
@@ -88,14 +88,19 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400 transition font-medium">
-                  Blog
+                <a href="/presentation.html" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition font-medium">
+                  Presentation
                 </a>
               </li>
               <li>
                 <Link href="/careers" className="hover:text-blue-400 transition font-medium">
-                  Careers
+                  Admin
                 </Link>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-400 transition font-medium">
+                  Blog
+                </a>
               </li>
             </ul>
           </div>

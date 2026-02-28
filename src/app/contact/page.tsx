@@ -155,13 +155,23 @@ export default function ContactPage() {
 
       <section id="contact-form" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Contact Information */}
-            <div>
+            <div className="lg:col-span-2">
               <h2 className="text-4xl font-bold mb-8 text-gray-900">
                 Contact Information
               </h2>
               <div className="space-y-8">
+                {/* Company Name */}
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
+                    Company
+                  </h3>
+                  <p className="text-xl font-bold text-gray-900">
+                    Infodra Technologies Private Limited
+                  </p>
+                </div>
+
                 {/* Address */}
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
@@ -232,25 +242,11 @@ export default function ContactPage() {
                     <p className="font-medium mt-2"><span className="text-red-600">Sunday - </span><span className="text-red-600">Closed</span></p>
                   </div>
                 </div>
-
-                {/* Quick Stats */}
-                <div className="pt-6 border-t border-gray-200">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <div className="text-2xl font-bold text-blue-600">50M+</div>
-                      <p className="text-xs text-gray-600">Business Records</p>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-blue-600">50+</div>
-                      <p className="text-xs text-gray-600">Languages</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-lg border border-blue-200">
+            <div className="lg:col-span-3 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-lg border border-blue-200">
               <h2 className="text-2xl font-bold mb-2 text-gray-900">
                 Send us a Message
               </h2>
@@ -472,6 +468,27 @@ export default function ContactPage() {
                 </div>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+            Find Us on the Map
+          </h2>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.823456789!2d80.2444165!3d12.9710945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525db836ad22c5%3A0xa093bcdbfcbeb1c!2sInfodra%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Infodra Technologies Location"
+            ></iframe>
           </div>
         </div>
       </section>

@@ -29,17 +29,14 @@ export function Navbar() {
           {/* Logo */}
           <a href="https://www.infodratechnologies.com/" className="flex items-center gap-3 flex-shrink-0">
             <Image 
-              src="/infodra-logo.png" 
+              src="/technologies-logo.png" 
               alt="Infodra Technologies Logo" 
-              width={40}
+              width={80}
               height={40}
-              className="w-10 h-10 object-contain"
+              className="h-16 w-auto object-contain"
               priority
               unoptimized
             />
-            <span className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent tracking-wide">
-              Infodra Technologies
-            </span>
           </a>
 
           {/* Desktop Navigation */}

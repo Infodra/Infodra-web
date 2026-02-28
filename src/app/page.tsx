@@ -3,9 +3,9 @@ import Link from "next/link";
 import { MessageCircle, Globe, Zap, Users, Shield, Clock, Code2, Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Solutions, Website Development & Digital Services | Infodra Technologies",
+  title: "AI Products | Digital Solutions | Engineering Services | Talent Acquisition | Infodra Technologies",
   description:
-    "Infodra Technologies provides AI solutions, website development, SEO services, web apps, and business automation. Grow your business with cutting-edge digital tools and expert support.",
+    "Infodra Technologies offers AI Products, Digital Solutions, Engineering Services, and Talent Acquisition. Grow your business with cutting-edge technology and expert support.",
   keywords: [
     "AI solutions",
     "website development",

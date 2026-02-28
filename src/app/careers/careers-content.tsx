@@ -54,15 +54,291 @@ const roleCategories = {
   ],
 };
 
+// Technical skills mapping by role
+const skillsByRole: { [key: string]: string[] } = {
+  "Full Stack Developer": [
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "REST APIs",
+    "GraphQL",
+    "MongoDB",
+    "PostgreSQL",
+    "MySQL",
+    "Docker",
+    "Git",
+    "CI/CD",
+    "JWT Authentication",
+    "Microservices Architecture",
+  ],
+  "Frontend Developer (React / Next.js)": [
+    "React.js",
+    "Next.js",
+    "Redux / Zustand",
+    "TypeScript",
+    "HTML5",
+    "CSS3",
+    "Tailwind CSS",
+    "Material UI",
+    "Responsive Design",
+    "REST API Integration",
+    "Performance Optimization",
+    "SEO Optimization",
+    "Web Accessibility",
+  ],
+  "Backend Developer (Node.js / Python)": [
+    "Node.js",
+    "Express.js",
+    "Python",
+    "Django / FastAPI",
+    "RESTful APIs",
+    "GraphQL",
+    "Microservices",
+    "JWT / OAuth",
+    "Database Design",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "Kubernetes",
+    "API Security",
+  ],
+  "DevOps Engineer": [
+    "Docker",
+    "Kubernetes",
+    "CI/CD (GitHub Actions / Jenkins)",
+    "Terraform",
+    "Ansible",
+    "AWS / Azure / GCP",
+    "Monitoring (Prometheus / Grafana)",
+    "Nginx",
+    "Load Balancing",
+    "Infrastructure as Code",
+    "Linux Administration",
+  ],
+  "Cloud Engineer (AWS / Azure / GCP)": [
+    "AWS EC2 / S3 / Lambda",
+    "Azure App Services",
+    "Google Cloud Platform",
+    "Kubernetes",
+    "IAM & Security",
+    "Networking (VPC)",
+    "Cloud Monitoring",
+    "Auto Scaling",
+    "Cloud Architecture Design",
+  ],
+  "UI/UX Designer": [
+    "Figma",
+    "Adobe XD",
+    "Wireframing",
+    "Prototyping",
+    "User Research",
+    "Design Systems",
+    "UX Testing",
+    "Responsive Design",
+    "Interaction Design",
+  ],
+  "Mobile App Developer": [
+    "Flutter",
+    "React Native",
+    "Kotlin",
+    "Swift",
+    "REST APIs",
+    "Firebase",
+    "App Store Deployment",
+    "Play Store Deployment",
+    "Push Notifications",
+  ],
+  "SEO Specialist": [
+    "On-page SEO",
+    "Off-page SEO",
+    "Technical SEO",
+    "Google Analytics",
+    "Google Search Console",
+    "Keyword Research",
+    "Backlink Strategy",
+    "Schema Markup",
+    "SEO Audits",
+  ],
+  "QA Engineer": [
+    "Manual Testing",
+    "Automation Testing",
+    "Selenium",
+    "Cypress",
+    "API Testing",
+    "Postman",
+    "Performance Testing",
+    "Test Case Documentation",
+    "Agile QA",
+  ],
+  "Business Analyst": [
+    "Requirement Gathering",
+    "BRD / FRD Documentation",
+    "Process Mapping",
+    "Stakeholder Communication",
+    "Jira",
+    "User Story Writing",
+    "Gap Analysis",
+    "Functional Testing Support",
+  ],
+  "AI / ML Engineer": [
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "Model Deployment",
+    "RAG Architecture",
+    "LangChain",
+    "LLM Fine-tuning",
+    "Vector Databases",
+    "MLOps",
+    "API Integration",
+    "Cloud ML (Vertex AI / SageMaker)",
+  ],
+  "Data Scientist": [
+    "Python",
+    "R",
+    "Pandas",
+    "NumPy",
+    "Data Visualization",
+    "Machine Learning",
+    "Statistical Analysis",
+    "Feature Engineering",
+    "SQL",
+    "Predictive Modeling",
+  ],
+  "Data Analyst": [
+    "SQL",
+    "Excel",
+    "Power BI",
+    "Tableau",
+    "Data Cleaning",
+    "Reporting",
+    "Dashboarding",
+    "Data Interpretation",
+  ],
+  "NLP Engineer": [
+    "Python",
+    "NLTK",
+    "SpaCy",
+    "Transformers",
+    "Hugging Face",
+    "Text Classification",
+    "Sentiment Analysis",
+    "LLM Integration",
+    "RAG Systems",
+  ],
+  "Computer Vision Engineer": [
+    "OpenCV",
+    "TensorFlow",
+    "PyTorch",
+    "YOLO",
+    "Image Processing",
+    "Object Detection",
+    "CNN Architectures",
+    "Model Optimization",
+  ],
+  "Prompt Engineer": [
+    "LLM Prompt Design",
+    "OpenAI API",
+    "Claude / Gemini",
+    "LangChain",
+    "RAG Workflow",
+    "AI Agents",
+    "Prompt Optimization",
+    "Model Evaluation",
+  ],
+  "Design Engineer (CAD)": [
+    "AutoCAD",
+    "SolidWorks",
+    "CATIA",
+    "Creo",
+    "Inventor",
+    "GD&T",
+    "2D Drafting",
+    "3D Modeling",
+    "BOM Preparation",
+  ],
+  "CAE Analyst": [
+    "ANSYS",
+    "HyperMesh",
+    "Abaqus",
+    "FEA",
+    "CFD",
+    "Structural Analysis",
+    "Thermal Analysis",
+    "Simulation Validation",
+  ],
+  "Automotive Engineer": [
+    "Vehicle Integration",
+    "Powertrain Systems",
+    "EV Systems",
+    "CAD Tools",
+    "Testing & Validation",
+    "DFMEA",
+    "APQP",
+  ],
+  "R&D Engineer": [
+    "Product Development",
+    "Prototyping",
+    "Simulation",
+    "Innovation Research",
+    "Engineering Testing",
+    "Documentation",
+  ],
+  "Product Engineer": [
+    "Product Lifecycle",
+    "Design Optimization",
+    "Manufacturing Support",
+    "CAD Tools",
+    "Cost Reduction",
+    "Engineering Validation",
+  ],
+  "Business Development Executive": [
+    "Lead Generation",
+    "Client Communication",
+    "Proposal Writing",
+    "CRM Management",
+    "Sales Strategy",
+    "Negotiation Skills",
+  ],
+  "Project Manager": [
+    "Agile / Scrum",
+    "Jira",
+    "Resource Planning",
+    "Risk Management",
+    "Client Coordination",
+    "Budget Tracking",
+  ],
+  "Technical Recruiter": [
+    "IT Hiring",
+    "Engineering Hiring",
+    "LinkedIn Sourcing",
+    "ATS Tools",
+    "Screening",
+    "Offer Negotiation",
+  ],
+  "Operations Executive": [
+    "Process Management",
+    "Documentation",
+    "Vendor Coordination",
+    "Reporting",
+    "MS Office",
+    "Internal Communication",
+  ],
+};
+
 interface FormData {
   fullName: string;
   email: string;
   phone: string;
-  primaryDomain: string;
   role: string;
   experienceYears: string;
   location: string;
-  skills: string;
+  skills: string[];
   employmentStatus: string;
   preferredWorkType: string;
   noticePeriod: string;
@@ -81,11 +357,10 @@ export default function CareersPageContent() {
     fullName: "",
     email: "",
     phone: "",
-    primaryDomain: "",
     role: "",
     experienceYears: "",
     location: "",
-    skills: "",
+    skills: [],
     employmentStatus: "",
     preferredWorkType: "",
     noticePeriod: "",
@@ -125,11 +400,6 @@ export default function CareersPageContent() {
       errors.phone = "Please enter a valid phone number";
     }
 
-    // Primary Domain validation
-    if (!formData.primaryDomain) {
-      errors.primaryDomain = "Please select a primary domain";
-    }
-
     // Role validation
     if (!formData.role) {
       errors.role = "Please select a role";
@@ -148,8 +418,8 @@ export default function CareersPageContent() {
     }
 
     // Skills validation
-    if (!formData.skills.trim()) {
-      errors.skills = "Please list your technical skills";
+    if (formData.skills.length === 0) {
+      errors.skills = "Please select at least one technical skill";
     }
 
     // Employment Status validation
@@ -167,8 +437,10 @@ export default function CareersPageContent() {
       errors.noticePeriod = "Please select notice period";
     }
 
-    // Expected Salary validation (optional, but if provided, should be positive)
-    if (formData.expectedSalary && parseInt(formData.expectedSalary) <= 0) {
+    // Expected Salary validation
+    if (!formData.expectedSalary) {
+      errors.expectedSalary = "Expected annual salary is required";
+    } else if (parseInt(formData.expectedSalary) <= 0) {
       errors.expectedSalary = "Expected salary must be a positive number";
     }
 
@@ -225,6 +497,35 @@ export default function CareersPageContent() {
         [name]: "",
       }));
     }
+
+    // Reset skills when role changes
+    if (name === "role") {
+      setFormData((prev) => ({
+        ...prev,
+        skills: [],
+      }));
+    }
+  };
+
+  // Handle skill selection toggle
+  const handleSkillToggle = (skill: string) => {
+    setFormData((prev) => {
+      const newSkills = prev.skills.includes(skill)
+        ? prev.skills.filter((s) => s !== skill)
+        : [...prev.skills, skill];
+      return {
+        ...prev,
+        skills: newSkills,
+      };
+    });
+
+    // Clear error for skills on change
+    if (formErrors.skills) {
+      setFormErrors((prev) => ({
+        ...prev,
+        skills: "",
+      }));
+    }
   };
 
   // Handle file upload
@@ -269,7 +570,7 @@ export default function CareersPageContent() {
       submitFormData.append("fullName", formData.fullName);
       submitFormData.append("email", formData.email);
       submitFormData.append("phone", formData.phone);
-      submitFormData.append("skills", formData.skills);
+      submitFormData.append("skills", formData.skills.join(", "));
       submitFormData.append("experienceYears", formData.experienceYears);
       submitFormData.append("resume", formData.resume);
 
@@ -291,11 +592,10 @@ export default function CareersPageContent() {
             fullName: "",
             email: "",
             phone: "",
-            primaryDomain: "",
             role: "",
             experienceYears: "",
             location: "",
-            skills: "",
+            skills: [],
             employmentStatus: "",
             preferredWorkType: "",
             noticePeriod: "",
@@ -341,12 +641,20 @@ export default function CareersPageContent() {
             Join a team backed by enterprise engineering experience and<br className="hidden sm:inline" />
             AI-driven innovation across digital, mechanical, and technology domains.
           </p>
-          <a
-            href="#positions"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg tracking-widest hover:bg-blue-700 transition transform hover:scale-105"
-          >
-            Explore Opportunities
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#positions"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg tracking-widest hover:bg-blue-700 transition transform hover:scale-105"
+            >
+              Explore Opportunities
+            </a>
+            <a
+              href="#apply"
+              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg tracking-widest border-2 border-blue-600 hover:bg-blue-50 transition transform hover:scale-105"
+            >
+              Submit Your Profile
+            </a>
+          </div>
         </div>
       </section>
 
@@ -668,41 +976,6 @@ export default function CareersPageContent() {
                 Professional Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Primary Domain */}
-                <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">
-                    Primary Domain <span className="text-red-600">*</span>
-                  </label>
-                  <select
-                    name="primaryDomain"
-                    value={formData.primaryDomain}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border ${
-                      formErrors.primaryDomain
-                        ? "border-red-500 bg-red-50"
-                        : "border-gray-300 bg-white"
-                    } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  >
-                    <option value="">Select a domain</option>
-                    <option value="AI / ML">AI / ML</option>
-                    <option value="Full Stack Development">Full Stack Development</option>
-                    <option value="Frontend Development">Frontend Development</option>
-                    <option value="Backend Development">Backend Development</option>
-                    <option value="DevOps / Cloud">DevOps / Cloud</option>
-                    <option value="SEO / Digital Marketing">SEO / Digital Marketing</option>
-                    <option value="Mechanical CAD">Mechanical CAD</option>
-                    <option value="CAE / Analysis">CAE / Analysis</option>
-                    <option value="Automotive Engineering">Automotive Engineering</option>
-                    <option value="Business Development">Business Development</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  {formErrors.primaryDomain && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <AlertCircle className="w-4 h-4" /> {formErrors.primaryDomain}
-                    </p>
-                  )}
-                </div>
-
                 {/* Role Applying For */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-900 mb-2">
@@ -762,28 +1035,37 @@ export default function CareersPageContent() {
                 </div>
 
                 {/* Technical Skills */}
-                <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-900 mb-4">
                     Technical Skills <span className="text-red-600">*</span>
                   </label>
-                  <input
-                    type="text"
-                    name="skills"
-                    value={formData.skills}
-                    onChange={handleInputChange}
-                    placeholder="React, Node.js, Python, CATIA V5"
-                    className={`w-full px-4 py-3 rounded-lg border ${
-                      formErrors.skills
-                        ? "border-red-500 bg-red-50"
-                        : "border-gray-300 bg-white"
-                    } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  />
-                  <p className="mt-1 text-xs text-gray-500">
-                    Enter comma-separated skills (e.g., React, Python, CAD)
-                  </p>
+                  {!formData.role ? (
+                    <p className="text-sm text-gray-500 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                      Please select a role first to see available technical skills
+                    </p>
+                  ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                      {skillsByRole[formData.role]?.map((skill) => (
+                        <label key={skill} className="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-blue-50 cursor-pointer transition">
+                          <input
+                            type="checkbox"
+                            checked={formData.skills.includes(skill)}
+                            onChange={() => handleSkillToggle(skill)}
+                            className="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500"
+                          />
+                          <span className="ml-3 text-sm text-gray-700 select-none">{skill}</span>
+                        </label>
+                      ))}
+                    </div>
+                  )}
                   {formErrors.skills && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
                       <AlertCircle className="w-4 h-4" /> {formErrors.skills}
+                    </p>
+                  )}
+                  {formData.skills.length > 0 && (
+                    <p className="mt-2 text-xs text-gray-600">
+                      Selected: {formData.skills.length} skill{formData.skills.length !== 1 ? 's' : ''}
                     </p>
                   )}
                 </div>
@@ -881,10 +1163,10 @@ export default function CareersPageContent() {
                   )}
                 </div>
 
-                {/* Expected Annual Salary (Optional) */}
+                {/* Expected Annual Salary */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-900 mb-2">
-                    Expected Annual Salary (CTC) <span className="text-gray-500">(Optional)</span>
+                    Expected Annual Salary (CTC) <span className="text-red-600">*</span>
                   </label>
                   <div className="relative">
                     <span className="absolute left-4 top-3.5 text-gray-500 font-semibold">₹</span>

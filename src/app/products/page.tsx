@@ -73,10 +73,10 @@ export default function Products() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">50M+</div>
-              <p className="text-gray-600 font-semibold">Business Data Points</p>
-              <p className="text-gray-500 text-sm mt-2">
-                Access verified information on millions of companies
+              <div className="text-4xl font-bold text-blue-600 mb-2">Million+</div>
+              <p className="text-gray-800 font-semibold mb-2">Discover Business</p>
+              <p className="text-gray-500 text-sm">
+                B2B contact information instantly
               </p>
             </div>
             <div className="text-center">
