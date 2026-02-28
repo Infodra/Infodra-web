@@ -516,7 +516,7 @@ export const products: Product[] = [
     icon: "💼",
     features: [
       {
-        title: "5+ Million Business Records",
+        title: "Million+ Business Record access",
         description:
           "Access verified data on Indian companies, businesses, and decision makers across all sectors and regions",
       },
