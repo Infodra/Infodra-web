@@ -10,7 +10,8 @@ const productsAndSolutions = [
     { value: "ai-user-manual-generation", label: "AI User Manual Generation" },
     { value: "ai-document-translator", label: "AI Document Translator" },
     { value: "bizlead-database", label: "BiZlead Database" },
-    { value: "all-products", label: "All Products / General Inquiry" },
+    { value: "stafftrack", label: "StaffTrack" },
+    { value: "all-products", label: "General Inquiry" },
   ]},
   { category: "Digital Solutions", items: [
     { value: "web-development", label: "Professional Website Development" },
@@ -352,7 +353,8 @@ export default function ContactPage() {
                       <option value="ai-user-manual-generation">AI User Manual Generation</option>
                       <option value="ai-document-translator">AI Document Translator</option>
                       <option value="bizlead-database">BiZlead Database</option>
-                      <option value="all-products">All Products / General Inquiry</option>
+                      <option value="stafftrack">StaffTrack</option>
+                      <option value="all-products">General Inquiry</option>
                     </optgroup>
                     <optgroup label="Digital Solutions">
                       <option value="web-development">Professional Website Development</option>

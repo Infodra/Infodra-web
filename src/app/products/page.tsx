@@ -93,21 +93,21 @@ export default function Products() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="text-3xl mb-3">🤖</div>
-              <h3 className="font-semibold text-gray-900 mb-2">AI-powered SaaS applications</h3>
+            <div className="text-center bg-blue-50 rounded-lg overflow-hidden">
+              <img src="/feature-images/ai-saas.png" alt="AI-powered SaaS applications" className="w-full h-40 object-cover" />
+              <h3 className="font-semibold text-gray-900 p-4">AI-powered SaaS applications</h3>
             </div>
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="text-3xl mb-3">🏢</div>
-              <h3 className="font-semibold text-gray-900 mb-2">Enterprise-ready cloud platforms</h3>
+            <div className="text-center bg-blue-50 rounded-lg overflow-hidden">
+              <img src="/feature-images/cloud-platform.png" alt="Enterprise-ready cloud platforms" className="w-full h-40 object-cover" />
+              <h3 className="font-semibold text-gray-900 p-4">Enterprise-ready cloud platforms</h3>
             </div>
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="text-3xl mb-3">📈</div>
-              <h3 className="font-semibold text-gray-900 mb-2">Scalable AI infrastructure</h3>
+            <div className="text-center bg-blue-50 rounded-lg overflow-hidden">
+              <img src="/feature-images/ai-infrastructure.png" alt="Scalable AI infrastructure" className="w-full h-40 object-cover" />
+              <h3 className="font-semibold text-gray-900 p-4">Scalable AI infrastructure</h3>
             </div>
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="text-3xl mb-3">🚀</div>
-              <h3 className="font-semibold text-gray-900 mb-2">Continuous product innovation</h3>
+            <div className="text-center bg-blue-50 rounded-lg overflow-hidden">
+              <img src="/feature-images/product-innovation.png" alt="Continuous product innovation" className="w-full h-40 object-cover" />
+              <h3 className="font-semibold text-gray-900 p-4">Continuous product innovation</h3>
             </div>
           </div>
 

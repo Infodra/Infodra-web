@@ -12,7 +12,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:col-span-1">
             <Image 
-              src="/technologies-logo.png" 
+              src="/CompanyNameLogo.png" 
               alt="Infodra Technologies Logo" 
               width={200}
               height={60}

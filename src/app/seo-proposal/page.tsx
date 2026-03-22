@@ -95,28 +95,33 @@ export default function SEOProposal() {
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 via-white to-gray-50 pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-        </div>
+        {/* Decorative gradient elements with animations */}
+        <div className="absolute top-20 left-10 w-80 h-80 bg-emerald-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-slow-pulse" />
+        <div className="absolute -bottom-20 right-20 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-slow-pulse" />
+        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10" />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Structured SEO That Delivers Sustainable Growth
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Improve your Google rankings with our ethical SEO approach and data-driven strategies designed for long-term visibility and organic traffic growth.
-            </p>
-            <div className="flex justify-center">
-              <a
-                href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20an%20SEO%20proposal%20for%20my%20website."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="w-5 h-5" /> Request SEO Proposal
-              </a>
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="text-center md:text-left md:flex-1 animate-fade-in">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Structured SEO That Delivers Sustainable Growth
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+                Improve your Google rankings with our ethical SEO approach and data-driven strategies designed for long-term visibility and organic traffic growth.
+              </p>
+              <div className="flex justify-center md:justify-start">
+                <a
+                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20an%20SEO%20proposal%20for%20my%20website."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" /> Request SEO Proposal
+                </a>
+              </div>
+            </div>
+            <div className="md:flex-1 flex justify-center animate-fade-in">
+              <img src="/seo-hero.png" alt="SEO Services" className="max-w-md w-full rounded-2xl shadow-2xl" />
             </div>
           </div>
         </div>

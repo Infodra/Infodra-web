@@ -88,36 +88,47 @@ export default function SupportMaintenance() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-gray-50 pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-        </div>
+      <section className="relative min-h-[600px] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-gray-50 text-gray-900 overflow-hidden">
+        {/* Decorative gradient elements with animations */}
+        <div className="absolute top-40 right-32 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-pulse" />
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-pulse" />
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10" />
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Reliable Website Support & Maintenance
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Keep your website secure, fast, and up-to-date with our comprehensive support and maintenance plans. Let our experts handle the technical details while you focus on growing your business.
-            </p>
-            <div className="flex justify-center">
-              <a
-                href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20information%20about%20website%20support%20and%20maintenance."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="w-5 h-5" /> Talk to Expert
-              </a>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10">
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="text-center md:text-left md:flex-1">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight text-gray-900">
+                Reliable Website Support & Maintenance
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+                Keep your website secure, fast, and up-to-date with our comprehensive support and maintenance plans. Let our experts handle the technical details while you focus on growing your business.
+              </p>
+              <div className="flex justify-center md:justify-start">
+                <a
+                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20information%20about%20website%20support%20and%20maintenance."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" /> Talk to Expert
+                </a>
+              </div>
+            </div>
+            <div className="md:flex-1 flex justify-center">
+              <img src="/support-hero.png" alt="Website Support & Maintenance" className="max-w-md w-full rounded-2xl shadow-2xl" />
             </div>
           </div>
+        </div>
+        {/* Curved bottom edge */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+          <svg className="relative block w-full h-16 md:h-24" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,80 L0,40 Q360,0 720,40 Q1080,80 1440,40 L1440,80 Z" fill="white" />
+          </svg>
         </div>
       </section>
 
       {/* Maintenance Plans Section */}
-      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

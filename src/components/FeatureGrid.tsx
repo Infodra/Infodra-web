@@ -1,7 +1,14 @@
 "use client";
 
+import Image from "next/image";
+
+interface Feature {
+  title: string;
+  image: string; // path to image in public/
+}
+
 interface FeatureGridProps {
-  features: string[];
+  features: Feature[];
   columns?: 2 | 3 | 4;
 }
 
@@ -30,9 +37,17 @@ export function FeatureGrid({ features, columns = 3 }: FeatureGridProps) {
               key={index}
               className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-xl border border-gray-100 hover:border-blue-200 transition-all duration-300"
             >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">✨</div>
-              <p className="text-gray-800 font-semibold leading-relaxed group-hover:text-blue-600 transition">
-                {feature}
+              <div className="mb-4 flex justify-center">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={64}
+                  height={64}
+                  className="rounded-lg object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-gray-800 font-semibold leading-relaxed group-hover:text-blue-600 transition text-center">
+                {feature.title}
               </p>
               <div className="h-1 w-0 bg-gradient-to-r from-blue-600 to-blue-400 mt-4 group-hover:w-full transition-all duration-300" />
             </div>
