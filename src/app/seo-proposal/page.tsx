@@ -121,7 +121,7 @@ export default function SEOProposal() {
               </div>
             </div>
             <div className="md:flex-1 flex justify-center animate-fade-in">
-              <img src="/seo-hero.png" alt="SEO Services" className="max-w-md w-full rounded-2xl shadow-2xl" />
+              <img src="/seo-hero.png" alt="SEO Services" className="max-w-xl w-full rounded-2xl shadow-2xl" />
             </div>
           </div>
         </div>

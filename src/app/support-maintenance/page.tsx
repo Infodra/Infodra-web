@@ -115,7 +115,7 @@ export default function SupportMaintenance() {
               </div>
             </div>
             <div className="md:flex-1 flex justify-center">
-              <img src="/support-hero.png" alt="Website Support & Maintenance" className="max-w-md w-full rounded-2xl shadow-2xl" />
+              <img src="/support-hero.png" alt="Website Support & Maintenance" className="max-w-xl w-full rounded-2xl shadow-2xl" />
             </div>
           </div>
         </div>
