@@ -224,7 +224,7 @@ export default function WebsiteQuote() {
       <section className="bg-white border-t border-gray-200 py-6">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            href="/digital-solutions"
+            href="/engineering"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
           >
             ← Back to Digital Solutions

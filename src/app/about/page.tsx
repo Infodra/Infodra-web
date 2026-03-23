@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     'IT resourcing',
     'infodra technologies',
   ],
+  openGraph: {
+    title: 'About Us - Infodra Technologies | AI, Digital & Engineering Experts',
+    description:
+      'Learn about Infodra Technologies, founded by experienced professionals with 20+ years of expertise in AI, digital systems, engineering, and automotive industries.',
+    url: 'https://infodra.com/about',
+    type: 'website',
+  },
 };
 
 export default function AboutPage() {

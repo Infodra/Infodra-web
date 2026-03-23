@@ -15,6 +15,13 @@ export const metadata: Metadata = {
     "AI",
     "Infodra Technologies",
   ],
+  openGraph: {
+    title: "Careers at Infodra Technologies | Join Our Team",
+    description:
+      "Explore career opportunities at Infodra Technologies. Join our growing team in IT, Engineering, AI, and Digital Solutions.",
+    url: "https://infodra.com/careers",
+    type: "website",
+  },
 };
 
 export default function CareersPage() {

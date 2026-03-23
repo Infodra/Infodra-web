@@ -2,367 +2,191 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Users,
-  Code2,
-  Wrench,
-  Building2,
-  MessageCircle,
   ArrowRight,
+  Wrench,
+  Code2,
   CheckCircle2,
-  Briefcase,
-  Target,
+  Users,
   Clock,
   Shield,
-  TrendingUp,
-  MapPin,
+  Handshake,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Engineering & IT Resourcing Services | Infodra Technologies",
+  title: "Resource Solutions | Engineering & Technology Staffing | Infodra Technologies",
   description:
-    "Infodra Technologies provides skilled engineering and IT professionals for project support, contract staffing, and technical resource deployment.",
+    "Deploy skilled engineering and technology professionals on demand. Choose your specialization — CAD engineers, software developers, DevOps, AI/ML — with flexible engagement models.",
   keywords: [
     "resourcing services",
-    "IT staffing",
-    "engineering professionals",
-    "technical manpower",
+    "engineering staffing",
+    "technology staffing",
+    "CAD engineers",
+    "software developers",
     "contract staffing",
     "resource deployment",
-    "IT recruitment",
-    "engineering staff",
     "Infodra Technologies",
   ],
   openGraph: {
-    title: "Engineering & IT Resourcing Services | Infodra Technologies",
+    title: "Resource Solutions | Engineering & Technology Staffing | Infodra Technologies",
     description:
-      "Skilled engineering and IT professionals for your business needs. Reliable resource deployment and flexible staffing models.",
+      "Deploy skilled engineering and technology professionals on demand with flexible engagement models.",
     url: "https://infodra.com/resourcing",
     type: "website",
   },
 };
 
-interface ServiceCard {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-interface BenefitCard {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const services: ServiceCard[] = [
-  {
-    icon: <Wrench className="w-12 h-12 text-blue-600" />,
-    title: "Engineering Resource Deployment",
-    description:
-      "Provide mechanical, design, and technical engineers for project execution. Experienced professionals ready to support your engineering initiatives.",
-  },
-  {
-    icon: <Code2 className="w-12 h-12 text-blue-600" />,
-    title: "IT & Software Professionals",
-    description:
-      "Supply developers, analysts, and IT specialists for digital projects. Skilled talent in various technologies and programming languages.",
-  },
-  {
-    icon: <Clock className="w-12 h-12 text-blue-600" />,
-    title: "Contract & Temporary Staffing",
-    description:
-      "Flexible hiring models to meet short-term and long-term project demands. Scalable solutions for your varying business needs.",
-  },
-  {
-    icon: <Building2 className="w-12 h-12 text-blue-600" />,
-    title: "Dedicated Resource Teams",
-    description:
-      "Build complete technical teams tailored to your specific requirements. Full-service team support for complex projects.",
-  },
-];
-
-const industriesSupported = [
-  { icon: <TrendingUp className="w-6 h-6" />, name: "Automotive" },
-  { icon: <Building2 className="w-6 h-6" />, name: "Manufacturing" },
-  { icon: <Code2 className="w-6 h-6" />, name: "Information Technology" },
-  { icon: <Wrench className="w-6 h-6" />, name: "Engineering Services" },
-  { icon: <Briefcase className="w-6 h-6" />, name: "Industrial Projects" },
-];
-
-const benefits: BenefitCard[] = [
-  {
-    icon: <CheckCircle2 className="w-8 h-8 text-green-500" />,
-    title: "Skilled & Pre-Screened Professionals",
-    description:
-      "All our resources undergo rigorous screening and skill verification",
-  },
-  {
-    icon: <Briefcase className="w-8 h-8 text-green-500" />,
-    title: "Flexible Engagement Models",
-    description:
-      "Choose from full-time, contract, or project-based staffing options",
-  },
-  {
-    icon: <Clock className="w-8 h-8 text-green-500" />,
-    title: "Fast Resource Deployment",
-    description: "Quick turnaround time to get the right professionals on board",
-  },
-  {
-    icon: <TrendingUp className="w-8 h-8 text-green-500" />,
-    title: "Industry-Ready Talent",
-    description:
-      "Experience across automotive, IT, manufacturing, and engineering sectors",
-  },
-  {
-    icon: <Shield className="w-8 h-8 text-green-500" />,
-    title: "Reliable Long-Term Support",
-    description:
-      "Dedicated account management and ongoing HR support throughout engagement",
-  },
-  {
-    icon: <Target className="w-8 h-8 text-green-500" />,
-    title: "Customized Solutions",
-    description:
-      "Tailored resourcing strategies to match your specific project requirements",
-  },
-];
-
 export default function ResourcingServices() {
   return (
     <main className="min-h-screen bg-white">
-      {/* 1️⃣ HERO SECTION */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-gray-50 pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
-        {/* Decorative gradient elements with animations */}
-        <div className="absolute top-40 right-32 w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-subtle-pulse" />
-        <div className="absolute bottom-0 left-20 w-96 h-96 bg-violet-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-subtle-pulse" />
-        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10" />
+      {/* ────────── Hero Section ────────── */}
+      <section className="relative min-h-[600px] flex items-center bg-gradient-to-br from-teal-50/60 via-white to-cyan-50/40 text-gray-900 overflow-hidden">
+        <div className="absolute top-40 right-32 w-80 h-80 bg-teal-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-pulse" />
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-pulse" />
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-2xl opacity-10" />
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Hero Content */}
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Skilled Professionals When You Need Them
-              </h1>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                Reliable engineering and IT manpower solutions for your business
-                and project needs. Get access to pre-screened, industry-ready
-                professionals.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link
-                  href="#services"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold text-base tracking-wider rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
-                >
-                  Explore
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold text-base tracking-wider rounded-lg hover:bg-blue-50 transition-colors duration-200"
-                >
-                  Get in Touch
-                </Link>
-              </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left — Text */}
+          <div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-gray-900">
+              Resource Solutions by{" "}
+              <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
+                Infodra
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl mb-10 text-gray-600 max-w-2xl leading-relaxed">
+              Deploy skilled professionals on demand — choose your specialization
+              below and explore our dedicated Engineering or Technology resource
+              capabilities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="#choose"
+                className="bg-teal-500 text-white px-10 py-4 rounded-lg font-semibold text-xl tracking-wider hover:bg-teal-600 hover:shadow-2xl active:shadow-lg transition duration-200 shadow-lg"
+              >
+                Find Your Resources
+              </Link>
+              <Link
+                href="/contact"
+                className="border-2 border-gray-900 text-gray-900 px-8 py-3.5 rounded-lg font-semibold text-lg tracking-wider hover:bg-gray-100 active:bg-gray-200 transition duration-200"
+              >
+                Get in Touch
+              </Link>
             </div>
-
-            {/* Hero Image */}
-            <div className="relative h-96 md:h-full flex items-center justify-center">
-              <div className="relative w-full h-96 bg-gradient-to-br from-blue-200 to-blue-100 rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&q=80"
-                  alt="Engineering and IT Professionals - Skilled Technical Talent"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
+          </div>
+          {/* Right — Image */}
+          <div className="flex justify-center lg:justify-end">
+            <Image
+              src="/resourcing.png"
+              alt="Resource Solutions"
+              width={700}
+              height={570}
+              className="rounded-2xl object-contain drop-shadow-xl w-full max-w-[700px]"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* 2️⃣ INTRO SECTION */}
-      <section className="py-16 md:py-20 bg-white border-t border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-gray-700 leading-relaxed text-center">
-            Infodra Technologies specializes in providing qualified engineering
-            and IT professionals to support your business projects and technical
-            initiatives. Whether you need short-term contract staff, dedicated
-            teams, or individual specialists, we have the expertise and resources
-            to meet your requirements. Our professionals bring industry experience,
-            technical skills, and a commitment to project success.
-          </p>
-        </div>
-      </section>
-
-      {/* 3️⃣ SERVICES SECTION */}
-      <section
-        id="services"
-        className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100"
-      >
+      {/* ────────── Choose Your Specialization ────────── */}
+      <section id="choose" className="py-20 md:py-28 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <p className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-2">
+              Choose Your Specialization
+            </p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Resourcing Services
+              What Resources Do You Need?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive staffing solutions tailored to your project and
-              business requirements
+              We provide specialized professionals across two core domains.
+              Select the area that matches your project requirements.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Card 1 - Blue */}
-            <div className="p-8 bg-white border-0 border-l-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Engineering Resource Deployment
+            {/* Engineering Card */}
+            <div className="relative group p-10 rounded-2xl border-2 border-gray-200 bg-gradient-to-br from-sky-50/40 to-white hover:border-sky-400 hover:shadow-xl transition-all">
+              <div className="mb-6 p-4 w-fit bg-sky-100 rounded-xl">
+                <Wrench className="w-12 h-12 text-sky-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Engineering Resources
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Deployment of experienced mechanical, design, and technical engineers to support complex project execution and enterprise-scale engineering initiatives.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                CAD designers, mechanical engineers, product design specialists,
+                and technical drafters with expertise in CATIA, SolidWorks,
+                Siemens NX, and Creo.
               </p>
-            </div>
-
-            {/* Card 2 - Green */}
-            <div className="p-8 bg-white border-0 border-l-4 border-green-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                IT & Software Professionals
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Provision of skilled developers, analysts, and IT specialists across modern technology stacks to accelerate digital transformation programs.
-              </p>
-            </div>
-
-            {/* Card 3 - Amber */}
-            <div className="p-8 bg-white border-0 border-l-4 border-amber-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Contract & Temporary Staffing
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Flexible engagement models designed to support short-term, long-term, and project-based resource requirements with scalable workforce solutions.
-              </p>
-            </div>
-
-            {/* Card 4 - Indigo */}
-            <div className="p-8 bg-white border-0 border-l-4 border-indigo-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Dedicated Resource Teams
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Structured technical teams aligned to your project objectives, delivering coordinated execution and end-to-end support for complex programs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4️⃣ INDUSTRIES WE SUPPORT */}
-      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Industries We Support
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Delivering structured engineering and digital solutions across diverse industry ecosystems.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {/* Automotive */}
-            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="flex justify-center mb-4 text-blue-600">
-                <TrendingUp className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                Automotive
-              </h3>
-            </div>
-
-            {/* Manufacturing */}
-            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="flex justify-center mb-4 text-blue-600">
-                <Building2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                Manufacturing
-              </h3>
-            </div>
-
-            {/* Information Technology */}
-            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="flex justify-center mb-4 text-blue-600">
-                <Code2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                Information<br />Technology
-              </h3>
-            </div>
-
-            {/* Engineering Services */}
-            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="flex justify-center mb-4 text-blue-600">
-                <Wrench className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                Engineering<br />Services
-              </h3>
-            </div>
-
-            {/* Industrial Projects */}
-            <div className="p-6 bg-white border-0 border-t-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="flex justify-center mb-4 text-blue-600">
-                <Briefcase className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                Industrial<br />Projects
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5️⃣ WHY CHOOSE INFODRA */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Choose Infodra for Resourcing
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Partner with us for reliable, skilled, and committed technical
-              professionals
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300"
+              <ul className="space-y-2.5 mb-8">
+                {[
+                  "CAD / Design Engineers (CATIA, NX, SW, Creo)",
+                  "Mechanical & Product Engineers",
+                  "Drafters & Documentation Specialists",
+                  "DFM / Value Engineering Experts",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-sky-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/engineering"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-600 transition"
               >
-                <div className="mb-4">{benefit.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                Explore Engineering <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+
+            {/* Technology Card */}
+            <div className="relative group p-10 rounded-2xl border-2 border-gray-200 bg-gradient-to-br from-indigo-50/40 to-white hover:border-indigo-400 hover:shadow-xl transition-all">
+              <div className="mb-6 p-4 w-fit bg-indigo-100 rounded-xl">
+                <Code2 className="w-12 h-12 text-indigo-600" />
               </div>
-            ))}
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Technology Resources
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Full-stack developers, cloud engineers, DevOps specialists, QA
+                automation engineers, and AI/ML professionals across modern tech
+                stacks.
+              </p>
+              <ul className="space-y-2.5 mb-8">
+                {[
+                  "Full-Stack & Backend Developers",
+                  "Cloud & DevOps Engineers",
+                  "QA Engineers & Test Automation",
+                  "AI / ML Engineers",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/technology"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 text-white rounded-lg font-semibold hover:bg-indigo-600 transition"
+              >
+                Explore Technology <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS SECTION */}
-      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
+      {/* ────────── How We Work ────────── */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <p className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-2">
+              Simple Process
+            </p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               How We Work
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A straightforward process to meet your staffing needs quickly and
-              efficiently
+              From requirement to deployment in as little as 1–2 weeks
             </p>
           </div>
 
@@ -371,28 +195,30 @@ export default function ResourcingServices() {
               {
                 step: "01",
                 title: "Understand Your Needs",
-                description: "Discuss your project requirements and team composition",
+                description:
+                  "We discuss your project scope, skill requirements, timeline, and team composition.",
               },
               {
                 step: "02",
-                title: "Find Matching Talent",
+                title: "Match & Screen Talent",
                 description:
-                  "We identify and screen candidates with the right skills",
+                  "Pre-vetted professionals are shortlisted based on skills, experience, and domain fit.",
               },
               {
                 step: "03",
                 title: "Quick Onboarding",
-                description: "Fast deployment of professionals to your project",
+                description:
+                  "Rapid deployment within 1–2 weeks with seamless integration into your workflows.",
               },
               {
                 step: "04",
                 title: "Ongoing Support",
                 description:
-                  "Continuous HR support and resource management throughout",
+                  "Dedicated account management, performance monitoring, and flexible team scaling.",
               },
             ].map((process, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-teal-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg">
                   {process.step}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
@@ -407,189 +233,103 @@ export default function ResourcingServices() {
         </div>
       </section>
 
-      {/* RESOURCE TYPES SECTION */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
+      {/* ────────── Why Infodra ────────── */}
+      <section className="py-20 md:py-28 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <p className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-2">
+              Our Differentiators
+            </p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Types of Resources We Provide
+              Why Infodra for Resourcing
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
-              <Wrench className="w-10 h-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Engineering Professionals
-              </h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Mechanical Engineers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Design Engineers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>CAD Specialists</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Technical Engineers</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
-              <Code2 className="w-10 h-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                IT Professionals
-              </h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Software Developers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Full Stack Developers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>QA Specialists</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Data Analysts</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
-              <Briefcase className="w-10 h-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Specialized Support
-              </h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Technical Support Staff</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Business Analysts</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Project Coordinators</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <span>Dedicated Teams</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6️⃣ FINAL CTA SECTION */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-slate-900 via-emerald-900 to-cyan-900 text-white border-t border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Looking for Skilled Technical Resources?
-          </h2>
-          <p className="text-xl text-emerald-100 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Whether you need short-term contract staff, dedicated teams, or
-            individual specialists, we have the talent and expertise to support
-            your projects and business objectives.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a
-              href="https://wa.me/918148146785"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 bg-white text-emerald-600 font-bold text-xl tracking-wider rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
-            >
-              <MessageCircle className="mr-3 w-6 h-6" />
-              WhatsApp
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-bold text-xl tracking-wider rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"
-            >
-              Send a Proposal Request
-              <ArrowRight className="ml-3 w-6 h-6" />
-            </Link>
-          </div>
-
-          <p className="text-blue-100 text-sm mt-8">
-            Available Monday to Friday, 9 AM - 6 PM IST
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ SECTION */}
-      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                question:
-                  "How quickly can you provide qualified professionals?",
-                answer:
-                  "We typically can match and deploy qualified professionals within 1-2 weeks, depending on the complexity of requirements and specific skill set needed.",
+                icon: <Shield className="w-8 h-8 text-teal-600" />,
+                title: "Pre-Vetted Professionals",
+                description:
+                  "Rigorous screening, skill verification, and domain-specific experience validation before assignment.",
               },
               {
-                question: "What engagement models do you offer?",
-                answer:
-                  "We offer flexible models including full-time permanent staff, contract-based professionals, dedicated teams, and project-based resources to suit your business needs.",
+                icon: <Clock className="w-8 h-8 text-teal-600" />,
+                title: "1–2 Week Deployment",
+                description:
+                  "Rapid turnaround from requirement to on-project deployment — no lengthy hiring cycles.",
               },
               {
-                question: "How do you ensure the quality of professionals?",
-                answer:
-                  "All our resources undergo rigorous screening, skill verification, background checks, and experience validation before being assigned to projects.",
+                icon: <Handshake className="w-8 h-8 text-teal-600" />,
+                title: "Flexible Engagement Models",
+                description:
+                  "Time & material, fixed-scope, dedicated teams, or project-based — aligned to your procurement.",
               },
               {
-                question: "Can you provide resources for long-term projects?",
-                answer:
-                  "Yes, we provide long-term dedicated support with ongoing HR management, performance monitoring, and team continuity throughout your project.",
+                icon: <Users className="w-8 h-8 text-teal-600" />,
+                title: "Scalable Teams",
+                description:
+                  "Scale up or down based on project phases, product launches, or seasonal demand without friction.",
               },
               {
-                question: "What industries have you supported?",
-                answer:
-                  "We have extensive experience across automotive, manufacturing, IT, engineering services, and industrial sectors with industry-specific expertise.",
+                icon: <Wrench className="w-8 h-8 text-teal-600" />,
+                title: "Engineering + Technology Expertise",
+                description:
+                  "Combined depth in CAD/manufacturing engineering and modern software stacks — one vendor for both.",
               },
               {
-                question: "Do you provide any training or onboarding support?",
-                answer:
-                  "We ensure smooth onboarding and can coordinate training and project familiarization to help professionals become productive quickly.",
+                icon: <CheckCircle2 className="w-8 h-8 text-teal-600" />,
+                title: "Dedicated Account Management",
+                description:
+                  "Single point of contact with continuous HR support, performance monitoring, and team continuity.",
               },
-            ].map((faq, index) => (
-              <details
+            ].map((card, index) => (
+              <div
                 key={index}
-                className="group bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors cursor-pointer"
+                className="p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-lg hover:border-teal-200 transition-all"
               >
-                <summary className="flex items-center justify-between font-semibold text-gray-900 text-lg">
-                  {faq.question}
-                  <span className="text-blue-600 group-open:rotate-180 transition-transform">
-                    ▼
-                  </span>
-                </summary>
-                <p className="text-gray-600 mt-4 leading-relaxed">
-                  {faq.answer}
+                <div className="mb-4">{card.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{card.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {card.description}
                 </p>
-              </details>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ────────── CTA Banner ────────── */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 rounded-2xl p-12 md:p-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Not Sure Which Specialization You Need?
+            </h2>
+            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+              Tell us about your project and we&apos;ll recommend the right mix
+              of engineering and technology professionals to get you started.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-3.5 bg-teal-500 text-white rounded-lg font-semibold hover:bg-teal-600 transition gap-2"
+              >
+                Talk to Us <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/engineering"
+                className="inline-flex items-center justify-center px-8 py-3.5 border border-slate-500 text-slate-200 rounded-lg font-semibold hover:border-white hover:text-white transition gap-2"
+              >
+                Engineering Resources
+              </Link>
+              <Link
+                href="/technology"
+                className="inline-flex items-center justify-center px-8 py-3.5 border border-slate-500 text-slate-200 rounded-lg font-semibold hover:border-white hover:text-white transition gap-2"
+              >
+                Technology Resources
+              </Link>
+            </div>
           </div>
         </div>
       </section>

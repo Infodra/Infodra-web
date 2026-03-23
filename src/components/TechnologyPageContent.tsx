@@ -4,25 +4,28 @@ import { useROICalculator } from "@/components/ROICalculatorWidget";
 import Link from "next/link";
 import Image from "next/image";
 import {
+  Code2,
+  Zap,
   CheckCircle2,
   ArrowRight,
   Headphones,
   Calculator,
+  Cpu,
+  Layers,
+  Building2,
+  Factory,
   Cog,
   Users,
   Shield,
   TrendingUp,
   Handshake,
-  Factory,
-  Car,
-  Building2,
-  Ruler,
-  PenTool,
+  Server,
+  BrainCircuit,
   UserPlus,
-  Layers,
-  Wrench,
-  ScanLine,
-  Activity,
+  Workflow,
+  BarChart3,
+  Lock,
+  Smartphone,
 } from "lucide-react";
 
 /* ───────────────────────── Data ───────────────────────── */
@@ -34,77 +37,118 @@ interface ServiceItem {
   items: string[];
 }
 
-const engineeringServices: ServiceItem[] = [
+/* Technology Solutions */
+const technologySolutions: ServiceItem[] = [
   {
-    icon: <Ruler className="w-10 h-10 text-blue-600" />,
-    title: "CAD Design & Engineering",
+    icon: <Code2 className="w-10 h-10 text-blue-600" />,
+    title: "Custom Software Development",
     description:
-      "Professional CAD design and engineering documentation services using industry-standard tools for precision manufacturing and product development.",
+      "Full-cycle software engineering for enterprise-grade systems, built with scalable architecture, robust security, and long-term maintainability.",
     items: [
-      "CATIA V5/V6 Design & Surfacing",
-      "SolidWorks 3D Modeling & Assembly",
-      "Siemens NX (Unigraphics) Engineering",
-      "PTC Creo / Pro-E Design Services",
+      "Enterprise Web Applications",
+      "Microservices & API Architecture",
+      "Multi-Tenant SaaS Platforms",
+      "Legacy System Modernization",
     ],
   },
   {
-    icon: <PenTool className="w-10 h-10 text-blue-600" />,
-    title: "3D Modeling & Technical Drafting",
+    icon: <Layers className="w-10 h-10 text-blue-600" />,
+    title: "System Integration",
     description:
-      "High-precision 3D models, technical drawings, and engineering documentation that meet global manufacturing standards and tolerances.",
+      "Seamlessly connect disparate enterprise systems, third-party platforms, and data sources to enable unified, efficient operations.",
     items: [
-      "3D Solid & Surface Modeling",
-      "2D Production Drawings (GD&T)",
-      "Sheet Metal & Weldment Design",
-      "BOM Generation & Documentation",
+      "ERP / CRM / PLM Integration",
+      "Third-Party API Integration",
+      "Data Pipeline & ETL Solutions",
+      "Real-Time Data Streaming",
     ],
   },
   {
-    icon: <Cog className="w-10 h-10 text-blue-600" />,
-    title: "Product Design & Development Support",
+    icon: <Cpu className="w-10 h-10 text-blue-600" />,
+    title: "Scalable Digital Platforms",
     description:
-      "End-to-end product design support from concept through production-ready engineering, aligned with OEM and Tier-1 supplier requirements.",
+      "Architect and deploy cloud-native platforms designed for high availability, horizontal scaling, and enterprise-grade performance.",
     items: [
-      "Concept to Production Design",
-      "Design Modifications & Optimization",
-      "Value Engineering & Cost Reduction",
-      "Design for Manufacturing (DFM/DFA)",
+      "Cloud-Native Architecture (AWS, GCP, Azure)",
+      "Containerization & Kubernetes",
+      "CI/CD Pipeline Engineering",
+      "Infrastructure as Code",
     ],
   },
   {
-    icon: <Wrench className="w-10 h-10 text-blue-600" />,
-    title: "Assembly Drawing for Aftersale Market",
+    icon: <BarChart3 className="w-10 h-10 text-blue-600" />,
+    title: "Data Analytics & Business Intelligence",
     description:
-      "Specialized assembly drawings and technical documentation for aftermarket parts, service kits, and replacement components — ensuring accurate fitment and serviceability.",
+      "Transform raw data into actionable insights with custom dashboards, data warehousing, and predictive analytics platforms for smarter decision-making.",
     items: [
-      "Aftermarket Assembly & Exploded Views",
-      "Service & Maintenance Illustrations",
-      "Replacement Parts Catalogs & BOMs",
-      "Fitment & Installation Drawings",
+      "Custom Dashboards & Reporting",
+      "Data Warehousing & Modeling",
+      "Predictive Analytics & Forecasting",
+      "BI Platform Implementation",
     ],
   },
   {
-    icon: <Activity className="w-10 h-10 text-blue-600" />,
-    title: "Prototyping & Additive Manufacturing Design",
+    icon: <Lock className="w-10 h-10 text-blue-600" />,
+    title: "Cybersecurity & Compliance",
     description:
-      "Design for 3D printing and rapid prototyping support — enabling faster product iterations, functional testing, and production-ready additive manufacturing solutions.",
+      "Protect enterprise systems with security audits, compliance frameworks, and proactive threat management aligned with industry standards.",
     items: [
-      "Design for Additive Manufacturing (DfAM)",
-      "Rapid Prototyping & Concept Models",
-      "3D Print-Ready File Preparation",
-      "Functional Prototype Validation",
+      "Security Audits & Penetration Testing",
+      "SOC2 / ISO 27001 Compliance",
+      "Identity & Access Management",
+      "Vulnerability Assessment & Remediation",
     ],
   },
   {
-    icon: <ScanLine className="w-10 h-10 text-blue-600" />,
-    title: "Reverse Engineering",
+    icon: <Smartphone className="w-10 h-10 text-blue-600" />,
+    title: "Mobile & Cross-Platform Development",
     description:
-      "3D scanning, point cloud processing, and legacy part digitization to recreate accurate CAD models from physical components or outdated drawings.",
+      "Build native, hybrid, and progressive web applications that deliver seamless user experiences across all devices and platforms.",
     items: [
-      "3D Scanning & Point Cloud to CAD",
-      "Legacy Part Digitization",
-      "As-Built Documentation",
-      "Dimensional Inspection & Comparison",
+      "Native iOS & Android Development",
+      "React Native & Flutter Apps",
+      "Progressive Web Apps (PWA)",
+      "Responsive Enterprise Portals",
+    ],
+  },
+];
+
+/* Digital Transformation & Automation */
+const transformationServices: ServiceItem[] = [
+  {
+    icon: <Zap className="w-10 h-10 text-blue-600" />,
+    title: "Business Process Automation",
+    description:
+      "Eliminate manual bottlenecks and improve operational efficiency with intelligent automation designed for enterprise-grade reliability.",
+    items: [
+      "Workflow Orchestration",
+      "Robotic Process Automation (RPA)",
+      "Document Digitization & OCR",
+      "Data Pipeline Automation",
+    ],
+  },
+  {
+    icon: <Workflow className="w-10 h-10 text-blue-600" />,
+    title: "Workflow Optimization",
+    description:
+      "Analyze, redesign, and digitize complex business workflows to reduce cycle times, eliminate redundancies, and improve throughput.",
+    items: [
+      "Process Mapping & Analysis",
+      "ERP Workflow Optimization",
+      "Approval & Routing Automation",
+      "KPI Dashboards & Reporting",
+    ],
+  },
+  {
+    icon: <BrainCircuit className="w-10 h-10 text-blue-600" />,
+    title: "AI-Enabled Solutions",
+    description:
+      "Leverage artificial intelligence and machine learning to extract actionable insights, automate decision-making, and build intelligent products.",
+    items: [
+      "Predictive Analytics & Forecasting",
+      "Computer Vision & Quality Inspection",
+      "Natural Language Processing",
+      "Enterprise System Digitization",
     ],
   },
 ];
@@ -116,11 +160,11 @@ interface Industry {
 
 const industries: Industry[] = [
   { icon: <Factory className="w-8 h-8" />, name: "Manufacturing" },
-  { icon: <Car className="w-8 h-8" />, name: "Automotive" },
-  { icon: <Cog className="w-8 h-8" />, name: "Industrial Engineering" },
-  { icon: <Building2 className="w-8 h-8" />, name: "Aerospace & Defense" },
-  { icon: <TrendingUp className="w-8 h-8" />, name: "Energy & Power" },
-  { icon: <Layers className="w-8 h-8" />, name: "Heavy Equipment" },
+  { icon: <Server className="w-8 h-8" />, name: "SaaS & Technology" },
+  { icon: <Building2 className="w-8 h-8" />, name: "Enterprise & Corporate" },
+  { icon: <Cog className="w-8 h-8" />, name: "Engineering" },
+  { icon: <TrendingUp className="w-8 h-8" />, name: "Energy & Industrial" },
+  { icon: <Shield className="w-8 h-8" />, name: "Healthcare & Finance" },
 ];
 
 interface WhyChooseCard {
@@ -131,40 +175,40 @@ interface WhyChooseCard {
 
 const whyChooseCards: WhyChooseCard[] = [
   {
-    icon: <Cog className="w-8 h-8 text-blue-600" />,
-    title: "Engineering DNA",
+    icon: <Code2 className="w-8 h-8 text-blue-600" />,
+    title: "Full-Stack Engineering",
     description:
-      "Founded on engineering expertise — our team understands manufacturing processes, tolerances, and industry standards from the ground up.",
+      "End-to-end software engineering capability — from architecture design and development to deployment, monitoring, and continuous optimization.",
   },
   {
     icon: <Shield className="w-8 h-8 text-blue-600" />,
-    title: "OEM & Tier-1 Standards",
+    title: "Enterprise-Grade Quality",
     description:
-      "Deliverables aligned with OEM quality standards, GD&T specifications, and production-ready documentation requirements.",
+      "Built with OWASP best practices, ISO-aligned processes, and compliance-ready frameworks. Quality is embedded, not bolted on.",
   },
   {
-    icon: <Ruler className="w-8 h-8 text-blue-600" />,
-    title: "Multi-CAD Expertise",
+    icon: <Layers className="w-8 h-8 text-blue-600" />,
+    title: "Scalable Architecture",
     description:
-      "Certified engineers in CATIA, SolidWorks, Siemens NX, and Creo — we adapt to your tool environment seamlessly.",
+      "Systems designed to handle growing workloads, high concurrency, and complex integrations as your business scales globally.",
   },
   {
     icon: <Handshake className="w-8 h-8 text-blue-600" />,
     title: "Long-Term Partnership Model",
     description:
-      "We operate as an extension of your engineering team — invested in outcomes, not just deliverables. Built for multi-year engagements.",
+      "We operate as an extension of your technology team — invested in outcomes, not just deliverables. Built for multi-year engagements.",
   },
   {
     icon: <Headphones className="w-8 h-8 text-blue-600" />,
     title: "Dedicated Support & SLAs",
     description:
-      "SLA-backed support, design revision cycles, and proactive communication to keep your engineering projects on track.",
+      "SLA-backed support, proactive monitoring, and incident response to ensure your systems remain performant and reliable.",
   },
   {
     icon: <TrendingUp className="w-8 h-8 text-blue-600" />,
-    title: "Scalable Engineering Capacity",
+    title: "Measurable Business Impact",
     description:
-      "Rapidly scale your engineering team up or down based on project phases, product launches, or seasonal demand — without long hiring cycles.",
+      "Every engagement is aligned with clear KPIs. We focus on outcomes that directly support your operational and business objectives.",
   },
 ];
 
@@ -194,88 +238,88 @@ function ServiceCard({ service }: { service: ServiceItem }) {
 
 /* ───────────────────────── Component ───────────────────────── */
 
-export function DigitalSolutionsContent() {
+export function TechnologyPageContent() {
   const { openCalculator } = useROICalculator();
 
   const faqItems = [
     {
-      question: "What CAD tools and engineering software do you support?",
+      question: "What technologies and stacks do you specialize in?",
       answer:
-        "We have certified expertise in CATIA V5/V6, SolidWorks, Siemens NX (Unigraphics), and PTC Creo/Pro-E. Our engineers are experienced in surfacing, sheet metal, GD&T, BOM management, and production-ready drawing packages aligned with OEM standards.",
+        "Our software team specializes in React, Next.js, Node.js, Python, TypeScript, .NET, Java, AWS, GCP, Azure, Docker, Kubernetes, PostgreSQL, and MongoDB. We select the optimal stack based on your project requirements and existing infrastructure.",
     },
     {
-      question: "What types of engineering projects do you handle?",
+      question: "What is your typical engagement model for technology projects?",
       answer:
-        "We handle a wide range — from concept-to-production CAD design, 3D modeling, and technical drafting to design optimization, value engineering, and DFM/DFA analysis. Our expertise spans automotive, aerospace, heavy equipment, and industrial manufacturing domains.",
+        "We offer flexible engagement models including dedicated development teams, contract staffing (time & material), and fixed-scope delivery. For long-term engagements, we embed developers within your workflows under your project management or ours.",
     },
     {
-      question: "How quickly can you deploy engineering resources?",
+      question: "Can you integrate with our existing enterprise systems (SAP, PLM, etc.)?",
       answer:
-        "For contract staffing, we can deploy pre-vetted CAD designers and mechanical engineers within 1–2 weeks. For dedicated project teams, onboarding and ramp-up typically takes 2–4 weeks depending on the skill mix and CAD tool requirements.",
+        "Yes. We have extensive experience integrating with ERPs (SAP, Oracle), PLM systems (Teamcenter, Windchill), CRMs, and proprietary internal systems via REST, GraphQL, SOAP, and event-driven architectures.",
     },
     {
-      question: "Do you work with OEM and Tier-1 quality standards?",
+      question: "How do you handle cloud infrastructure and DevOps?",
       answer:
-        "Yes. All engineering deliverables are aligned with OEM quality standards, GD&T specifications, and production-ready documentation requirements. We follow industry-standard drawing practices and tolerance specifications.",
+        "We design and deploy cloud-native architectures on AWS, GCP, and Azure with containerization (Docker/Kubernetes), CI/CD pipelines, Infrastructure as Code (Terraform/Pulumi), and automated monitoring and scaling.",
     },
     {
-      question: "What engagement models do you offer for engineering services?",
+      question: "How quickly can you deploy software development resources?",
       answer:
-        "We offer flexible models including dedicated engineering teams, contract staffing (time & material), and fixed-scope project delivery. For long-term engagements, we embed engineers within your workflows under your project management or ours.",
+        "For contract staffing, we can deploy pre-vetted developers within 1–2 weeks. For dedicated project teams, onboarding and ramp-up typically takes 2–4 weeks depending on the skill mix and project complexity.",
     },
     {
       question: "Do you provide ongoing support after project delivery?",
       answer:
-        "Yes. We offer SLA-backed support packages including design revision cycles, engineering change order management, documentation updates, and continuous design optimization.",
+        "Yes. We offer SLA-backed maintenance and support packages including proactive monitoring, performance optimization, security patching, and continuous feature enhancements.",
     },
   ];
 
   return (
     <main className="min-h-screen bg-white">
       {/* ────────── Hero Section ────────── */}
-      <section className="relative min-h-[600px] flex items-center bg-gradient-to-br from-sky-50/60 via-white to-slate-50/40 text-gray-900 overflow-hidden">
-        {/* Decorative animated elements — soft sky-blue theme */}
-        <div className="absolute top-40 right-32 w-80 h-80 bg-sky-300 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse" />
-        <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse" />
-        <div className="absolute top-1/4 left-1/3 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse" />
+      <section className="relative min-h-[600px] flex items-center bg-gradient-to-br from-indigo-50/60 via-white to-violet-50/40 text-gray-900 overflow-hidden">
+        {/* Decorative animated elements — soft indigo / violet theme */}
+        <div className="absolute top-40 right-32 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-pulse" />
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-violet-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-pulse" />
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-10" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left — Text */}
           <div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-gray-900">
-              Engineering Services for{" "}
-              <span className="bg-gradient-to-r from-sky-500 to-blue-400 bg-clip-text text-transparent">
+              Technology Solutions for{" "}
+              <span className="bg-gradient-to-r from-indigo-500 to-violet-400 bg-clip-text text-transparent">
                 Enterprise
               </span>
             </h1>
             <p className="text-lg md:text-xl mb-10 text-gray-600 max-w-2xl leading-relaxed">
-              Professional CAD design, 3D modeling, and product development
-              support using CATIA, SolidWorks, Siemens NX, and Creo — delivering
-              precision engineering for manufacturing and automotive enterprises.
+              Custom software development, system integration, scalable
+              digital platforms, and AI-enabled automation — built for
+              complex business environments and enterprise-grade performance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-sky-500 text-white px-8 py-3.5 rounded-lg font-semibold text-lg tracking-wider hover:bg-sky-600 hover:shadow-2xl active:shadow-lg transition duration-200 shadow-lg"
+                className="bg-indigo-500 text-white px-8 py-3.5 rounded-lg font-semibold text-lg tracking-wider hover:bg-indigo-600 hover:shadow-2xl active:shadow-lg transition duration-200 shadow-lg"
               >
                 Request a Consultation
               </Link>
               <Link
-                href="#engineering"
+                href="#technology"
                 className="border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-lg font-semibold text-base tracking-wider hover:bg-gray-100 hover:border-gray-900 active:bg-gray-200 transition duration-200"
               >
-                Explore Our Services
+                Explore Our Capabilities
               </Link>
             </div>
           </div>
           {/* Right — Image */}
           <div className="flex justify-center lg:justify-end">
             <Image
-              src="/assembly.png"
-              alt="Engineering Services"
+              src="/technology.png"
+              alt="Technology Solutions"
               width={700}
               height={570}
-              className="rounded-2xl object-cover drop-shadow-xl w-full max-w-[700px]"
+              className="rounded-2xl object-contain drop-shadow-xl w-full max-w-[700px]"
               priority
             />
           </div>
@@ -283,30 +327,28 @@ export function DigitalSolutionsContent() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-          Engineering Services
+          Technology Solutions
          ════════════════════════════════════════════════════════════ */}
       <section
-        id="engineering"
+        id="technology"
         className="py-20 md:py-28 bg-white border-t border-gray-100"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-2">
-              Core Expertise
+              Software & Platforms
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Engineering Services
+              Technology Solutions
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Professional CAD design, 3D modeling, and product development
-              support using industry-standard tools — CATIA, SolidWorks,
-              Siemens NX, and Creo — for global manufacturing and automotive
-              enterprises.
+              Enterprise software development, system integration, and scalable
+              digital platforms built for complex business environments.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {engineeringServices.map((s, i) => (
+            {technologySolutions.map((s, i) => (
               <ServiceCard key={i} service={s} />
             ))}
           </div>
@@ -314,21 +356,47 @@ export function DigitalSolutionsContent() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-          Engineering Resource Deployment & Staffing
+          Digital Transformation & Automation
+         ════════════════════════════════════════════════════════════ */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-2">
+              Modernize & Automate
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Digital Transformation & Automation
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Eliminate manual processes, digitize enterprise operations, and
+              unlock intelligence across your business with automation and
+              AI-enabled solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {transformationServices.map((s, i) => (
+              <ServiceCard key={i} service={s} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+          Technology Resource Deployment & Staffing
          ════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-blue-400 font-semibold tracking-wider uppercase text-sm mb-2">
-              Scale Your Engineering Team
+              Scale Your Technology Team
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Engineering Resource Deployment
+              Technology Resource Deployment
             </h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              Rapidly deploy skilled CAD designers and mechanical engineers to
-              augment your in-house engineering teams — on contract, project, or
-              retainer basis.
+              Rapidly deploy skilled software developers, DevOps engineers, and
+              data specialists to augment your in-house technology teams.
             </p>
           </div>
 
@@ -338,18 +406,18 @@ export function DigitalSolutionsContent() {
                 <UserPlus className="w-10 h-10 text-blue-300" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
-                Skilled Engineer Deployment
+                Skilled Developer Deployment
               </h3>
               <p className="text-slate-300 mb-5 text-sm leading-relaxed">
-                Access pre-vetted CAD designers, mechanical engineers, and
-                product design specialists ready to integrate with your teams.
+                Access pre-vetted full-stack developers, backend engineers, and
+                cloud specialists ready to integrate with your project teams.
               </p>
               <ul className="space-y-2.5">
                 {[
-                  "CAD / Design Engineers (CATIA, NX, SW)",
-                  "Mechanical & Product Engineers",
-                  "Drafters & Documentation Specialists",
-                  "DFM / Value Engineering Experts",
+                  "Full-Stack & Backend Developers",
+                  "Cloud & DevOps Engineers",
+                  "QA Engineers & Test Automation",
+                  "AI / ML Engineers",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
@@ -375,7 +443,7 @@ export function DigitalSolutionsContent() {
                 {[
                   "Time & Material Contracts",
                   "Fixed-Scope Project Delivery",
-                  "Dedicated Engineering Team Model",
+                  "Dedicated Development Team Model",
                   "Vendor-Compliant Documentation",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm">
@@ -395,7 +463,7 @@ export function DigitalSolutionsContent() {
               </h3>
               <p className="text-slate-300 mb-5 text-sm leading-relaxed">
                 Rapid ramp-up within 1–2 weeks with the flexibility to scale
-                engineering teams up or down based on project phases and demand.
+                development teams up or down based on project phases and demand.
               </p>
               <ul className="space-y-2.5">
                 {[
@@ -426,8 +494,8 @@ export function DigitalSolutionsContent() {
               Industries We Serve
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Deep engineering expertise across complex, regulated, and
-              high-stakes manufacturing industries worldwide.
+              Deep technology expertise across complex, regulated, and
+              high-stakes industries worldwide.
             </p>
           </div>
 
@@ -458,8 +526,8 @@ export function DigitalSolutionsContent() {
               Why Partner with Infodra
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A trusted engineering partner committed to quality, precision,
-              and measurable outcomes for manufacturing enterprises.
+              A trusted technology partner committed to quality, operational
+              reliability, and measurable business impact.
             </p>
           </div>
 
@@ -487,12 +555,12 @@ export function DigitalSolutionsContent() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-2xl p-12 md:p-16 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Scale Your Engineering Capabilities?
+              Ready to Build Your Next Technology Platform?
             </h2>
             <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-              Whether you need CAD design support, a dedicated engineering team,
-              or product development expertise — let&apos;s discuss how Infodra
-              can support your next project.
+              Whether you need a dedicated development team, enterprise system
+              integration, or AI-powered automation — let&apos;s discuss how
+              Infodra can accelerate your technology roadmap.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -503,7 +571,7 @@ export function DigitalSolutionsContent() {
               </Link>
               <button
                 onClick={() =>
-                  openCalculator("Engineering Services")
+                  openCalculator("Technology Solutions")
                 }
                 className="inline-flex items-center justify-center px-8 py-3.5 border border-slate-500 text-slate-200 rounded-lg font-semibold hover:border-white hover:text-white transition gap-2"
               >
@@ -525,7 +593,7 @@ export function DigitalSolutionsContent() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600">
-              Key information for engineering decision-makers
+              Key information for technology decision-makers
             </p>
           </div>
 
