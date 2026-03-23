@@ -22,6 +22,7 @@ export function Navbar() {
         : "text-gray-700 hover:text-blue-600"
     }`;
 
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   return (
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950 border-b border-slate-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,11 +30,11 @@ export function Navbar() {
           {/* Logo */}
           <a href="https://www.infodratechnologies.com/" className="flex items-center gap-3 flex-shrink-0">
             <Image 
-              src="/technologies-logo.png" 
+              src="/CompanyNameLogo.png" 
               alt="Infodra Technologies Logo" 
-              width={80}
-              height={40}
-              className="h-16 w-auto object-contain"
+              width={240}
+              height={60}
+              className="h-14 w-auto object-contain"
               priority
               unoptimized
             />

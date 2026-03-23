@@ -66,36 +66,48 @@ export default function WebsiteQuote() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-gray-50 pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
+          <div className="absolute top-40 right-32 w-80 h-80 bg-emerald-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-slow-pulse"></div>
+          <div className="absolute bottom-0 left-20 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-slow-pulse"></div>
+          <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-2xl opacity-10"></div>
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Professional Website Packages for Every Business
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Scalable, modern, and SEO-ready websites designed to help your business grow online and convert visitors into customers.
-            </p>
-            <div className="flex justify-center">
-              <a
-                href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20website%20quote."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="w-5 h-5" /> Chat with us on WhatsApp
-              </a>
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="text-center md:text-left md:flex-1 animate-fade-in">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Professional Website for your Business
+              </h1>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
+                Scalable, modern, and SEO-ready websites designed to help your business grow online and convert visitors into customers.
+              </p>
+              <div className="flex justify-center md:justify-start">
+                <a
+                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20website%20quote."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" /> Chat with us on WhatsApp
+                </a>
+              </div>
+            </div>
+            <div className="md:flex-1 flex justify-center">
+              <img src="/website-hero.png" alt="Website Development" className="max-w-md w-full rounded-2xl shadow-2xl" />
             </div>
           </div>
+        </div>
+        {/* Curved bottom edge */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+          <svg className="relative block w-full h-16 md:h-24" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,80 L0,40 Q360,0 720,40 Q1080,80 1440,40 L1440,80 Z" fill="white" />
+          </svg>
         </div>
       </section>
 
       {/* Pricing Packages Section */}
-      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -174,27 +186,37 @@ export default function WebsiteQuote() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyChoose.map((reason, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all">
-                <div className="mb-4 p-4 w-fit bg-blue-50 rounded-xl">
-                  <CheckCircle2 className="w-8 h-8 text-blue-600" />
+            {whyChoose.map((reason, index) => {
+              const colorSchemes = [
+                { bg: "bg-white border border-blue-100", icon: "bg-blue-50", iconColor: "text-blue-600", text: "text-gray-900", desc: "text-gray-600", hover: "hover:border-blue-300 hover:shadow-blue-100/50" },
+                { bg: "bg-white border border-emerald-100", icon: "bg-emerald-50", iconColor: "text-emerald-600", text: "text-gray-900", desc: "text-gray-600", hover: "hover:border-emerald-300 hover:shadow-emerald-100/50" },
+                { bg: "bg-white border border-purple-100", icon: "bg-purple-50", iconColor: "text-purple-600", text: "text-gray-900", desc: "text-gray-600", hover: "hover:border-purple-300 hover:shadow-purple-100/50" },
+                { bg: "bg-white border border-orange-100", icon: "bg-orange-50", iconColor: "text-orange-600", text: "text-gray-900", desc: "text-gray-600", hover: "hover:border-orange-300 hover:shadow-orange-100/50" },
+                { bg: "bg-white border border-cyan-100", icon: "bg-cyan-50", iconColor: "text-cyan-600", text: "text-gray-900", desc: "text-gray-600", hover: "hover:border-cyan-300 hover:shadow-cyan-100/50" },
+              ];
+              const color = colorSchemes[index % colorSchemes.length];
+              return (
+                <div key={index} className={`${color.bg} ${color.hover} p-8 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300`}>
+                  <div className={`mb-4 p-4 w-fit ${color.icon} rounded-xl`}>
+                    <CheckCircle2 className={`w-8 h-8 ${color.iconColor}`} />
+                  </div>
+                  <h3 className={`text-xl font-bold ${color.text} mb-3`}>
+                    {reason}
+                  </h3>
+                  <p className={color.desc}>
+                    {reason === "Business-focused design"
+                      ? "Every website is designed to meet your business goals and drive conversions."
+                      : reason === "SEO-ready structure"
+                      ? "Built with SEO best practices to help you rank higher on Google search results."
+                      : reason === "Fast loading performance"
+                      ? "Optimized for speed and performance to ensure great user experience."
+                      : reason === "Scalable development"
+                      ? "Built to grow with your business as your needs evolve."
+                      : "Continuous support and maintenance after your website goes live."}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {reason}
-                </h3>
-                <p className="text-gray-600">
-                  {reason === "Business-focused design"
-                    ? "Every website is designed to meet your business goals and drive conversions."
-                    : reason === "SEO-ready structure"
-                    ? "Built with SEO best practices to help you rank higher on Google search results."
-                    : reason === "Fast loading performance"
-                    ? "Optimized for speed and performance to ensure great user experience."
-                    : reason === "Scalable development"
-                    ? "Built to grow with your business as your needs evolve."
-                    : "Continuous support and maintenance after your website goes live."}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
