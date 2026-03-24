@@ -48,17 +48,9 @@ export default function Home() {
               We combine enterprise engineering expertise with AI-driven innovation to design secure, scalable, and future-ready technology systems that deliver measurable business impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://www.infodra.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg tracking-wider hover:bg-green-600 transition transform hover:scale-105"
-              >
-                Explore Infodra AI
-              </a>
               <Link
                 href="/engineering"
-                className="inline-block bg-transparent text-white px-8 py-4 rounded-lg font-semibold text-lg tracking-wider border-2 border-white hover:bg-white hover:text-slate-900 transition transform hover:scale-105"
+                className="inline-block bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg tracking-wider hover:bg-green-600 hover:shadow-2xl transition transform hover:scale-105"
               >
                 Explore Engineering
               </Link>
@@ -87,59 +79,6 @@ export default function Home() {
           <svg className="relative block w-full h-16 md:h-24" viewBox="0 0 1440 80" preserveAspectRatio="none">
             <path d="M0,80 L0,40 Q360,0 720,40 Q1080,80 1440,40 L1440,80 Z" fill="white" />
           </svg>
-        </div>
-      </section>
-
-      {/* AI PRODUCTS SECTION */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center text-gray-900 mb-4">
-            AI Products
-          </h2>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
-            Powerful AI tools designed to automate your business and unlock new possibilities
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Card 1 */}
-            <div className="relative p-8 bg-white border-0 border-l-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">AI Video Translator</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Translate videos to 50+ languages with AI precision. Break language barriers instantly.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="relative p-8 bg-white border-0 border-l-4 border-green-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Document Processing</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Automate document analysis, extraction, and processing with 99.5% accuracy.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="relative p-8 bg-white border-0 border-l-4 border-amber-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Lead Generation</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Identify and qualify leads automatically. Access 50M+ verified business contacts.
-              </p>
-            </div>
-
-            {/* Card 4 */}
-            <div className="relative p-8 bg-white border-0 border-l-4 border-indigo-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Business Automation</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Streamline workflows and reduce manual tasks with intelligent automation.
-              </p>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/products"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition"
-            >
-              Explore More →
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -259,6 +198,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* RESOURCING SECTION */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-5xl font-bold text-center text-gray-900 mb-4">
+            Resourcing
+          </h2>
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+            Skilled professionals across IT, Mechanical, R&D, and Engineering domains, delivering resource deployment solutions for industry leaders and innovative startups.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Card 1 */}
+            <div className="p-8 bg-white border-0 border-l-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">IT Resources</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Full-time or part-time developers and engineers specialized in software development, web, mobile, and AI.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="p-8 bg-white border-0 border-l-4 border-green-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Mechanical Engineers</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Skilled mechanical engineers for product design, CAD, manufacturing support, and technical consulting.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="p-8 bg-white border-0 border-l-4 border-amber-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">R&D Specialists</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Research and development professionals for innovation, prototyping, and technical problem-solving.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="p-8 bg-white border-0 border-l-4 border-indigo-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Project-Based Teams</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Complete teams assembled for specific projects with clear timelines and deliverables across all domains.
+              </p>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/resourcing"
+              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition"
+            >
+              Explore More →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* WHY CHOOSE INFODRA SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -341,51 +333,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESOURCING SECTION */}
-      <section className="py-20 bg-gray-50">
+      {/* AI PRODUCTS SECTION */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-5xl font-bold text-center text-gray-900 mb-4">
-            Resourcing
+            AI Products
           </h2>
           <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
-            Skilled professionals across IT, Mechanical, R&D, and Engineering domains, delivering resource deployment solutions for industry leaders and innovative startups.
+            Powerful AI tools designed to automate your business and unlock new possibilities
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1 */}
-            <div className="p-8 bg-white border-0 border-l-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">IT Resources</h3>
+            <div className="relative p-8 bg-white border-0 border-l-4 border-blue-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">AI Video Translator</h3>
               <p className="text-gray-600 leading-relaxed">
-                Full-time or part-time developers and engineers specialized in software development, web, mobile, and AI.
+                Translate videos to 50+ languages with AI precision. Break language barriers instantly.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="p-8 bg-white border-0 border-l-4 border-green-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Mechanical Engineers</h3>
+            <div className="relative p-8 bg-white border-0 border-l-4 border-green-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Document Processing</h3>
               <p className="text-gray-600 leading-relaxed">
-                Skilled mechanical engineers for product design, CAD, manufacturing support, and technical consulting.
+                Automate document analysis, extraction, and processing with 99.5% accuracy.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="p-8 bg-white border-0 border-l-4 border-amber-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">R&D Specialists</h3>
+            <div className="relative p-8 bg-white border-0 border-l-4 border-amber-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Lead Generation</h3>
               <p className="text-gray-600 leading-relaxed">
-                Research and development professionals for innovation, prototyping, and technical problem-solving.
+                Identify and qualify leads automatically. Access 50M+ verified business contacts.
               </p>
             </div>
 
             {/* Card 4 */}
-            <div className="p-8 bg-white border-0 border-l-4 border-indigo-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Project-Based Teams</h3>
+            <div className="relative p-8 bg-white border-0 border-l-4 border-indigo-600 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Business Automation</h3>
               <p className="text-gray-600 leading-relaxed">
-                Complete teams assembled for specific projects with clear timelines and deliverables across all domains.
+                Streamline workflows and reduce manual tasks with intelligent automation.
               </p>
             </div>
           </div>
           <div className="text-center mt-12">
             <Link
-              href="/resourcing"
+              href="/products"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition"
             >
               Explore More →

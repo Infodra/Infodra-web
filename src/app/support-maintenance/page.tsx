@@ -181,7 +181,7 @@ export default function SupportMaintenance() {
                       : "border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
                   }`}
                 >
-                  Get Started <ArrowRight className="w-4 h-4" />
+                  Collaborate <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             ))}

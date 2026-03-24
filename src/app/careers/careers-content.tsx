@@ -767,14 +767,14 @@ export default function CareersPageContent() {
                 </div>
               </div>
 
-              {/* SEO & Digital Growth */}
+              {/* Digital Transformation */}
               <div className="group bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-orange-100 rounded-lg group-hover:bg-orange-600 transition-colors">
                     <TrendingUp className="w-6 h-6 text-orange-600 group-hover:text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 text-lg">SEO & Digital Growth</h3>
+                    <h3 className="font-semibold text-gray-900 text-lg">Digital Transformation</h3>
                     <p className="text-sm text-gray-600 mt-1">Scaling digital presence</p>
                   </div>
                 </div>

@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Headphones,
   Calculator,
+  BrainCircuit,
   Cog,
   Users,
   Shield,
@@ -501,14 +502,14 @@ export function DigitalSolutionsContent() {
               >
                 Partner with Us <ArrowRight className="w-5 h-5" />
               </Link>
-              <button
-                onClick={() =>
-                  openCalculator("Engineering Services")
-                }
+              <a
+                href="https://www.infodra.ai/products"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3.5 border border-slate-500 text-slate-200 rounded-lg font-semibold hover:border-white hover:text-white transition gap-2"
               >
-                <Calculator className="w-5 h-5" /> Estimate Project ROI
-              </button>
+                <BrainCircuit className="w-5 h-5" /> Explore our AI Products
+              </a>
             </div>
           </div>
         </div>
