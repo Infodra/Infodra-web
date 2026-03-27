@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "infodratechnologies.com"
+        }
+      ],
+      "destination": "https://www.infodratech.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.infodratechnologies.com"
+        }
+      ],
+      "destination": "https://www.infodratech.com/:path*",
+      "permanent": true
+    }
+  ]
+}
