@@ -1,0 +1,259 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+export function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
+
+  const navLinkClass = (path: string) =>
+    `transition font-medium ${
+      isActive(path)
+        ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+        : "text-gray-700 hover:text-blue-600"
+    }`;
+
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  return (
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950 border-b border-slate-700 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <a href="https://www.infodratechnologies.com/" className="flex items-center gap-3 flex-shrink-0">
+            <Image 
+              src="/CompanyNameLogo.png" 
+              alt="Infodra Technologies Logo" 
+              width={240}
+              height={60}
+              className="h-14 w-auto object-contain"
+              priority
+              unoptimized
+            />
+          </a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href="/" className={`transition font-medium text-base ${
+              isActive("/")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Home
+            </Link>
+
+            <Link href="/engineering" className={`transition font-medium text-base ${
+              isActive("/engineering")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Engineering
+            </Link>
+
+            <Link href="/technology" className={`transition font-medium text-base ${
+              isActive("/technology")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Technology
+            </Link>
+
+            <Link href="/products" className={`transition font-medium text-base ${
+              isActive("/products")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              AI Solutions
+            </Link>
+
+            <Link href="/resourcing" className={`transition font-medium text-base ${
+              isActive("/resourcing")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Resourcing
+            </Link>
+
+            <Link href="/case-studies" className={`transition font-medium text-base ${
+              isActive("/case-studies")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Case Studies
+            </Link>
+
+            <Link href="/careers" className={`transition font-medium text-base ${
+              isActive("/careers")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              Careers
+            </Link>
+
+            <Link href="/about" className={`transition font-medium text-base ${
+              isActive("/about")
+                ? "text-emerald-400 border-b-2 border-emerald-400 pb-1"
+                : "text-slate-300 hover:text-emerald-400"
+            }`}>
+              About Us
+            </Link>
+          </div>
+
+          {/* Desktop CTA Button */}
+          <Link
+            href="/contact"
+            className="hidden md:inline-block bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-semibold text-lg tracking-wider"
+          >
+            Contact Us
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-slate-300 hover:bg-slate-700 rounded-lg transition"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {mobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden pb-4 border-t border-slate-700 space-y-2 bg-slate-800">
+            <Link
+              href="/"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+
+            <Link
+              href="/engineering"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/engineering")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Engineering
+            </Link>
+
+            <Link
+              href="/technology"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/technology")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Technology
+            </Link>
+
+            <Link
+              href="/products"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/products")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              AI Solutions
+            </Link>
+
+            <Link
+              href="/resourcing"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/resourcing")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Resourcing
+            </Link>
+
+            <Link
+              href="/case-studies"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/case-studies")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Case Studies
+            </Link>
+
+            <Link
+              href="/careers"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/careers")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Careers
+            </Link>
+
+            <Link
+              href="/about"
+              className={`block px-4 py-2 rounded-lg transition ${
+                isActive("/about")
+                  ? "bg-slate-700 text-emerald-400 font-semibold"
+                  : "text-slate-300 hover:bg-slate-700"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
+
+            <Link
+              href="/contact"
+              className="block w-full bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition font-semibold text-lg tracking-wider text-center mt-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+}
