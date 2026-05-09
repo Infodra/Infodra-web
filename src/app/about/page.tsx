@@ -383,7 +383,11 @@ export default function AboutPage() {
           </div>
 
           <div className="space-y-2 text-emerald-50">
+<<<<<<< HEAD
             <p className="text-lg font-semibold">📞 WhatsApp: 93637 53540</p>
+=======
+            <p className="text-lg font-semibold">📞 WhatsApp: 81481 46785</p>
+>>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
             <p className="text-lg font-semibold">📧 Email: connect@infodratech.com</p>
           </div>
         </div>

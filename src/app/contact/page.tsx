@@ -193,6 +193,7 @@ export default function ContactPage() {
                 {/* Address */}
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
+<<<<<<< HEAD
                     📍Address
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -203,11 +204,26 @@ export default function ContactPage() {
                     No.143, Dr.M.G.R.Road
                     <br />
                     Perungudi, Chennai-600096
+=======
+                    Address
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    INNOV8, 2ND FLOOR
+                    <br />
+                    RMZ MILLENIA BUSINESS PARK
+                    <br />
+                    CAMPUS 1A
+                    <br />
+                    NO.143, DR.M.G.R.ROAD
+                    <br />
+                    PERUNGUDI, CHENNAI-600096
+>>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
                   </p>
                 </div>
 
                 {/* Phone */}
                 <div>
+<<<<<<< HEAD
   <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
     📞 Phone
   </h3>
@@ -223,11 +239,27 @@ export default function ContactPage() {
     0
   </a>
 </div>
+=======
+                  <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
+                    Phone
+                  </h3>
+                  <a
+                    href="tel:+918148146785"
+                    className="text-blue-600 hover:text-blue-700 font-semibold"
+                  >
+                    +91 81481 46785
+                  </a>
+                </div>
+>>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
 
                 {/* Email */}
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
+<<<<<<< HEAD
                    📧 Email
+=======
+                    Email
+>>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
                   </h3>
                   <a
                     href="mailto:connect@infodratech.com"
@@ -240,7 +272,11 @@ export default function ContactPage() {
                 {/* WhatsApp CTA */}
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide text-blue-600">
+<<<<<<< HEAD
                    
+=======
+                    Quick Contact
+>>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
                   </h3>
                   <WhatsAppCTA
                     productName="Infodra AI Solutions"
@@ -253,7 +289,11 @@ export default function ContactPage() {
                 {/* Business Hours */}
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide text-blue-600">
+<<<<<<< HEAD
                     🕒 Business Hours
+=======
+                    Business Hours
+>>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
                   </h3>
                   <div className="text-gray-600 space-y-1">
                     <p className="font-medium">Monday - Friday</p>
