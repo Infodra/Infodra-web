@@ -84,11 +84,7 @@ export default function WebsiteQuote() {
               </p>
               <div className="flex justify-center md:justify-start">
                 <a
-<<<<<<< HEAD
                   href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20website%20quote."
-=======
-                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20website%20quote."
->>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
@@ -154,11 +150,7 @@ export default function WebsiteQuote() {
                   ))}
                 </ul>
                 <a
-<<<<<<< HEAD
                   href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20am%20interested%20in%20the%20website%20package."
-=======
-                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20am%20interested%20in%20the%20website%20package."
->>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 ${
@@ -239,21 +231,13 @@ export default function WebsiteQuote() {
             Ready to launch your professional website? Chat with us on WhatsApp
           </p>
           <a
-<<<<<<< HEAD
             href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20website%20quote%20for%20my%20business."
-=======
-            href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20website%20quote%20for%20my%20business."
->>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-10 py-4 bg-white text-blue-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
           >
             <MessageCircle className="w-6 h-6" />
-<<<<<<< HEAD
             WhatsApp: 93637 53540
-=======
-            WhatsApp: 81481 46785
->>>>>>> 699ebf1a6ac196718ab807194d5bac6cfb069083
           </a>
         </div>
       </section>
