@@ -214,12 +214,12 @@ export default function ContactPage() {
 
   <a
     href="tel:+919363753540"
-    className="text-gray-600 hover:text-blue-700 font-semibold text-lg"
+    className="text-gray-500 hover:text-blue-700 font-semibold text-lg"
   >
     +91 9
-    <span className="text-emerald-500 font-bold">3637</span>
+    <span className="text-gray-600 font-bold">3637</span>
     {" "}
-    <span className="text-emerald-500 font-bold">5354</span>
+    <span className="text-gray-600 font-bold">5354</span>
     0
   </a>
 </div>
