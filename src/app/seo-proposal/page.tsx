@@ -111,7 +111,7 @@ export default function SEOProposal() {
               </p>
               <div className="flex justify-center md:justify-start">
                 <a
-                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20an%20SEO%20proposal%20for%20my%20website."
+                  href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20need%20an%20SEO%20proposal%20for%20my%20website."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
@@ -172,7 +172,7 @@ export default function SEOProposal() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20am%20interested%20in%20the%20SEO%20plan."
+                  href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20am%20interested%20in%20the%20SEO%20plan."
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 ${
@@ -293,13 +293,13 @@ export default function SEOProposal() {
             Let's discuss your SEO goals and create a strategy that works for your business
           </p>
           <a
-            href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20free%20SEO%20consultation%20for%20my%20website."
+            href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20need%20a%20free%20SEO%20consultation%20for%20my%20website."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-10 py-4 bg-white text-blue-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
           >
             <MessageCircle className="w-6 h-6" />
-            WhatsApp: 81481 46785
+            WhatsApp: 93637 53540
           </a>
         </div>
       </section>

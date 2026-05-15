@@ -10,6 +10,7 @@ import {
   Clock,
   Shield,
   Handshake,
+  Factory,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -103,7 +104,7 @@ export default function ResourcingServices() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Engineering Card */}
             <div className="relative group p-10 rounded-2xl border-2 border-gray-200 bg-gradient-to-br from-sky-50/40 to-white hover:border-sky-400 hover:shadow-xl transition-all">
               <div className="mb-6 p-4 w-fit bg-sky-100 rounded-xl">
@@ -154,8 +155,10 @@ export default function ResourcingServices() {
               <ul className="space-y-2.5 mb-8">
                 {[
                   "Full-Stack & Backend Developers",
+                  "UI / UX & Frontend Developers",
                   "Cloud & DevOps Engineers",
                   "QA Engineers & Test Automation",
+                  "Data Analytics & Specialists",
                   "AI / ML Engineers",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm">
@@ -169,6 +172,39 @@ export default function ResourcingServices() {
                 className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 text-white rounded-lg font-semibold hover:bg-indigo-600 transition"
               >
                 Explore Technology <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            {/* Manufacturing Technical Resources Card */}
+            <div className="relative group p-10 rounded-2xl border-2 border-gray-200 bg-gradient-to-br from-amber-50/40 to-white hover:border-amber-400 hover:shadow-xl transition-all flex flex-col">
+              <div className="mb-6 p-4 w-fit bg-amber-100 rounded-xl">
+                <Factory className="w-12 h-12 text-amber-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Manufacturing Technical Resources
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Deployment of skilled technical professionals for manufacturing operations, quality inspection, production support, maintenance, and shop-floor activities.
+              </p>
+              <ul className="space-y-2.5 mb-8">
+                {[
+                  "Mechanical Engineers",
+                  "Quality Inspectors",
+                  "Precision Machining Technicians",
+                  "Production Support Technicians",
+                  "Maintenance Technicians",
+                  "Assembly & Shop Floor Support",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/manufacturing"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 text-white rounded-lg font-semibold hover:bg-amber-600 transition"
+              >
+                Explore Manufacturing <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </div>

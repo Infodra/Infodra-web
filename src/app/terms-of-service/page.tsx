@@ -274,7 +274,7 @@ export default function TermsOfService() {
               </p>
               <p className="text-gray-600 mb-2">
                 <strong>WhatsApp:</strong>{" "}
-                <a href="https://wa.me/918148146785" className="text-blue-600 hover:underline">
+                <a href="https://wa.me/919363753540" className="text-blue-600 hover:underline">
                   +91 81481 46785
                 </a>
               </p>

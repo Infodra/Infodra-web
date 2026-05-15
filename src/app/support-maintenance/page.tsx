@@ -105,7 +105,7 @@ export default function SupportMaintenance() {
               </p>
               <div className="flex justify-center md:justify-start">
                 <a
-                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20need%20information%20about%20website%20support%20and%20maintenance."
+                  href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20need%20information%20about%20website%20support%20and%20maintenance."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2"
@@ -172,7 +172,7 @@ export default function SupportMaintenance() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20am%20interested%20in%20the%20support%20plan."
+                  href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20am%20interested%20in%20the%20support%20plan."
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 ${
@@ -265,7 +265,7 @@ export default function SupportMaintenance() {
             Get personalized support recommendations for your website
           </p>
           <a
-            href="https://wa.me/918148146785?text=Hi%20Infodra%20Technologies%2C%20I%20want%20to%20talk%20to%20an%20expert%20about%20website%20support%20and%20maintenance%20services."
+            href="https://wa.me/919363753540?text=Hi%20Infodra%20Technologies%2C%20I%20want%20to%20talk%20to%20an%20expert%20about%20website%20support%20and%20maintenance%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-10 py-4 bg-white text-emerald-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition"

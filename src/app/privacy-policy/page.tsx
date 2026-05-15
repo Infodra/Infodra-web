@@ -248,7 +248,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <p className="text-gray-700">
                 <strong>WhatsApp:</strong>{" "}
-                <a href="https://wa.me/918148146785" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                <a href="https://wa.me/919363753540" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                   81481 46785
                 </a>
               </p>

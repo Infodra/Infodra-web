@@ -200,7 +200,7 @@ export const products: Product[] = [
     },
     secondaryCTA: {
       text: "WhatsApp",
-      url: "https://wa.me/918148146785",
+      url: "https://wa.me/919363753540",
     },
   },
   {
